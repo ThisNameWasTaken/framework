@@ -1,0 +1,18 @@
+.container,
+.panel,
+.card {
+    padding: 0.01em 16px;
+    position: relative;
+    margin: auto;
+}
+
+.panel,
+.card {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.card {
+    padding: 16px;
+    border-radius: 2px;
+}

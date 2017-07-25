@@ -1,0 +1,88 @@
+ .overlay {
+     z-index: 999;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     background-color: rgba(0, 0, 0, 0.6);
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: flex;
+     padding: 8px;
+ }
+
+ .dialog {
+     padding: 16px;
+     border-radius: 2px;
+     background-color: #fff;
+     color: #000;
+     min-width: 100px;
+     width: auto;
+     height: auto;
+     z-index: 1000;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -webkit-flex-direction: column;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+         -ms-flex-direction: column;
+             flex-direction: column;
+     margin: auto;
+ }
+
+ .dialog .title {
+     text-align: center;
+     font-weight: 500;
+     display: block;
+     width: 100%;
+ }
+
+ .dialog .actions {
+     width: 100%;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: justify;
+     -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+         -ms-flex-pack: justify;
+             justify-content: space-between;
+     -webkit-flex-wrap: wrap;
+         -ms-flex-wrap: wrap;
+             flex-wrap: wrap;
+     margin: auto;
+     margin-top: 16px;
+ }
+
+ @media screen and (min-width: 48em) {
+     .dialog {
+         max-width: 80%;
+     }
+ }
+
+ @media screen and (min-width: 64em) {
+     .dialog {
+         max-width: 65%;
+     }
+ }
+
+ @media screen and (min-width: 80em) {
+     .dialog {
+         max-width: 50%;
+     }
+ }
+
+ @media screen and (min-width: 80em) {
+     .dialog {
+         max-width: 50%;
+     }
+ }

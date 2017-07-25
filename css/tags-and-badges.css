@@ -1,0 +1,16 @@
+.badge,
+.tag {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    padding: 0px 6px;
+}
+
+.tag {
+    border-radius: 2px;
+}
+
+.badge {
+    border-radius: 32px;
+}

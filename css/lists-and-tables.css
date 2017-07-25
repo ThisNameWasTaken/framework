@@ -1,0 +1,85 @@
+.table,
+.table-all {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+}
+
+.table-all {
+    border: 1px solid #ccc
+}
+
+.bordered tr,
+.table-all tr {
+    border-bottom: 1px solid #ddd
+}
+
+.striped tbody tr:nth-child(even) {
+    background-color: #f1f1f1
+}
+
+.table-all tr:nth-child(odd) {
+    background-color: #fff
+}
+
+.table-all tr:nth-child(even) {
+    background-color: #f1f1f1
+}
+
+.hoverable tbody tr::-moz-focus-inner,
+.list.hoverable li::-moz-focus-inner {
+    border: 0;
+}
+
+.hoverable tbody tr:hover,
+.list.hoverable li:hover {
+    background-color: rgba(158, 158, 158, 0.20);
+}
+
+.hoverable tbody tr:focus:not(:active),
+.list.hoverable li:focus:not(:active) {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.hoverable tbody tr:active,
+.list.hoverable li:active {
+    background-color: rgba(158, 158, 158, 0.40);
+}
+
+.centered tr th,
+.centered tr td {
+    text-align: center
+}
+
+.table td,
+.table th,
+.table-all td,
+.table-all th {
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top
+}
+
+.table th:first-child,
+.table td:first-child,
+.table-all th:first-child,
+.table-all td:first-child {
+    padding-left: 16px
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+.list li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd
+}
+
+.list li:last-child {
+    border-bottom: none
+}

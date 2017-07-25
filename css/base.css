@@ -1,0 +1,168 @@
+ .fluid {
+     width: 100%;
+     height: auto;
+ }
+
+ a {
+     text-decoration: none;
+     color: inherit;
+ }
+
+ img {
+     margin-bottom: -5px;
+ }
+
+ *,
+ *::before,
+ *::after {
+     margin: 0;
+     padding: 0;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+     -webkit-transition: all .3s ease, color 0s, visibility 0s;
+             transition: all .3s ease, color 0s, visibility 0s;
+ }
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none; 
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none; 
+}
+
+ body {
+     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+ }
+
+ .fa {
+     font-family: "Fonts/fontawesome-webfont.ttf?v=4.2.0";
+ }
+ /* Remove the unwanted box around FAB buttons */
+ /* More info: http://goo.gl/IPwKi */
+
+ a,
+ .accordion,
+ .button,
+ .card,
+ .material-checkbox,
+ .dropdown-menu,
+ .icon-toggle,
+ .item,
+ .nav-item,
+ .material-radio,
+ .material-slider,
+ .material-switch,
+ .tabs__tab {
+     -webkit-tap-highlight-color: transparent;
+     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+ }
+ /*
+ * Make html take up the entire screen
+ * Then set touch-action to avoid touch delay on mobile IE
+ */
+
+ html {
+     width: 100%;
+     height: 100%;
+     -ms-touch-action: manipulation;
+     touch-action: manipulation;
+ }
+ /*
+* Make body take up the entire screen
+* Remove body margin so layout containers don't cause extra overflow.
+*/
+
+ body {
+     width: 100%;
+     min-height: 100%;
+ }
+ /*
+ * Main display reset for IE support.
+ * Source: http://weblog.west-wind.com/posts/2015/Jan/12/main-HTML5-Tag-not-working-in-Internet-Explorer-91011
+ */
+
+ main {
+     display: block;
+ }
+ /* helps with border-radius */
+
+ .responsive {
+     overflow-x: auto;
+ }
+
+ @media screen and (max-width: 47.9999em) {
+     .hide-sm {
+         display: none!important;
+     }
+ }
+
+ @media screen and (min-width: 48em) and (max-width: 63.9999em) {
+     .hide-md {
+         display: none!important;
+     }
+ }
+
+ @media screen and (min-width: 64em) and (max-width: 79.9999em) {
+     .hide-lg {
+         display: none!important;
+     }
+ }
+
+ @media screen and (min-width: 80em) {
+     .hide-xl {
+         display: none!important;
+     }
+ }
+
+ .no-scroll {
+     overflow: hidden;
+ }
+
+ h1,
+ .h1 {
+     font-size: 36px
+ }
+
+ h2,
+ .h2 {
+     font-size: 30px
+ }
+
+ h3,
+ .h3,
+ .title {
+     font-size: 24px
+ }
+
+ h4,
+ .h4 {
+     font-size: 20px
+ }
+
+ h5,
+ .h5 {
+     font-size: 18px
+ }
+
+ h6,
+ .h6 {
+     font-size: 16px
+ }
+
+ h1,
+ .h1,
+ h2,
+ .h2,
+ h3,
+ .h3,
+ .title,
+ h4,
+ .h4,
+ h5,
+ .h5,
+ h6,
+ .h6 {
+     margin: 10px 0
+ }
