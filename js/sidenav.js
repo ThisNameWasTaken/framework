@@ -2,7 +2,7 @@
     'use strict';
 
     let menuBtn = document.getElementById('menu-btn');
-    let overlay = document.getElementById('overlay');
+    let overlayRest = document.getElementById('overlay-rest');
     let html = document.getElementsByTagName('html')[0];
 
     menuBtn.addEventListener('click', OpenSidenav);
@@ -16,7 +16,7 @@
         overlay.classList.remove('hide');
     }
 
-    overlay.addEventListener('click', CloseSidenav);
+    overlayRest.addEventListener('click', CloseSidenav);
 
     function CloseSidenav() {
         // enable scroll

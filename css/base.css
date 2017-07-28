@@ -21,14 +21,12 @@
           box-sizing: border-box;
      -webkit-transition: all .3s ease, color 0s, visibility 0s;
              transition: all .3s ease, color 0s, visibility 0s;
-    text-rendering: optimizeLegibility;
-
 
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-
+    
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
 
