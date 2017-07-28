@@ -21,7 +21,34 @@
           box-sizing: border-box;
      -webkit-transition: all .3s ease, color 0s, visibility 0s;
              transition: all .3s ease, color 0s, visibility 0s;
+    text-rendering: optimizeLegibility;
+
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    -webkit-font-feature-settings: 'liga';
+       -moz-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
  }
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/material-icons/MaterialIcons-Regular.eot"); /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url("../font/material-icons/MaterialIcons-Regular.woff2") format('woff2'),
+        url("../font/material-icons/MaterialIcons-Regular.woff") format('woff'),
+        url("../font/material-icons/MaterialIcons-Regular.ttf") format('truetype');
+}
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -52,7 +79,7 @@
  .item,
  .nav-item,
  .material-radio,
- .material-slider,
+ .material-range,
  .material-switch,
  .tabs__tab {
      -webkit-tap-highlight-color: transparent;

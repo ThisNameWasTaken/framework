@@ -303,7 +303,7 @@
 .hover-text-dark-grey:hover,
 .text-dark-gray,
 .hover-text-dark-gray:hover {
-    color: #3a3a3a!important
+    color: #616161!important
 }
 
 .border-red,
@@ -343,7 +343,7 @@
     border-color: #bbb!important
 }
 
-.w3-transparent,
-.w3-hover-transparent:hover {
+.transparent,
+.hover-transparent:hover {
     background-color: transparent!important
 }

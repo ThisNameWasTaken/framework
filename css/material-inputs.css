@@ -112,12 +112,12 @@ textarea.material-input::-webkit-scrollbar {
 }
 
 .material-checkbox .check,
+.material-checkbox .check::before,
 .material-checkbox .check::after,
 .material-radio .check,
 .material-radio .check::after,
 .material-switch .check,
 .material-switch .check::after {
-    color: transparent;
     width: 16px;
     height: 16px;
     line-height: 16px;
@@ -136,29 +136,35 @@ textarea.material-input::-webkit-scrollbar {
     position: relative;
 }
 
-/* layer 0 */
-.material-checkbox .check {
-    font-family: "Material Icons";
-    border-radius: 2px;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.55);
-}
-
 /* layer 1 */
-.material-checkbox .check::after {
-    content: "check_box";
+.material-checkbox .check::before {
     position: absolute;
     z-index: 1;
-    border-radius: 50%;
+    content:"";
+    border-radius: 2px;
+    border: 2px solid rgba(0, 0, 0, 0.55);
+}
+
+/* layer 2 */
+.material-checkbox .check::after {
+    font-family: "Material Icons";
+    content: "check";
+    position: absolute;
+    z-index: 2;
     opacity: 0;
-    -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-            transform: scale(1.3);
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
 }
 
 /* active state */
+.material-checkbox input:checked+.check::before {
+    border: 8px solid #2196F3;
+}
+
 .material-checkbox input:checked+.check::after {
-    color: #2196F3;
     opacity: 1;
+    -webkit-transition-delay: .2s;
+            transition-delay: .2s;
 }
 
 /* radio buttons */
@@ -230,85 +236,223 @@ textarea.material-input::-webkit-scrollbar {
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); 
 }
 
-/* material-range */
-input[type=range]{
-    -webkit-appearance: none;
-}
+/* material range */
 
-input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 5px;
-    background: #ddd;
+/* tracks */
+.material-range {
+    -webkit-appearance: none!important;
+        -moz-appearance: none!important;
+            appearance: none!important;
+    background-color: transparent!important;
+    outline:none;
+    width: 100%;
+    border-radius: 10px;
     border: none;
-    border-radius: 3px;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center;
 }
 
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
+.material-range::-moz-focus-outer {
     border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
-    margin-top: -4px;
 }
 
-input[type=range]:focus {
-    outline: none;
+.material-range::-ms-tooltip {
+    display: none;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ccc;
-}
 
-input[type=range]{
-    /* fix for FF unable to apply focus style bug  */
-    border: 1px solid white; 
-
-    /*required for proper track sizing in FF*/
-    width: 300px;
-}
-
-input[type=range]::-moz-range-thumb {
+.material-range::-webkit-slider-runnable-track {
+    background: transparent; 
+    width: 100%;
+    height: 12px;
     border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: goldenrod;
 }
 
-nput[type=range]::-ms-track {
-    width: 300px;
-    height: 5px;
-    
-    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+.material-range::-moz-range-track {
     background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
+    width: 100%;
+    height: 12px;
+    border: none; 
+}
 
-    /*remove default tick marks*/
+.material-range::-ms-track {
+    box-sizing: content-box;
+    background: transparent;
     color: transparent;
+    width: 100%;
+    height: 22px;
+    border-color: transparent;
 }
-input[type=range]::-ms-fill-lower {
-    background: #777;
-    border-radius: 10px;
-}
-input[type=range]::-ms-fill-upper {
-    background: #ddd;
-    border-radius: 10px;
-}
-input[type=range]::-ms-thumb {
+
+.material-range::-ms-fill-lower {
     border: none;
-    height: 16px;
-    width: 16px;
+    background-color: transparent;
+}
+
+.material-range::-ms-fill-upper {
+    border: none;
+    background-color: transparent;
+}
+
+/* thumbs */
+.material-range::-webkit-slider-thumb {
+    -webkit-appearance: none!important;
+            appearance: none!important;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
     border-radius: 50%;
-    background: goldenrod;
+    background: #2196F3;
+    border: none;
 }
-input[type=range]:focus::-ms-fill-lower {
-    background: #888;
+
+.material-range::-moz-range-thumb {
+    -moz-appearance: none!important;
+         appearance: none!important;
+    width: 12px;
+    height: 12px;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    border-radius: 50%;
+    background: #2196F3;
+    border: none;
+    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
-input[type=range]:focus::-ms-fill-upper {
-    background: #ccc;
+
+/* thumb active state */
+.material-range:focus:not(:active).material-range::-webkit-slider-thumb {
+    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+}
+
+.material-range:focus:not(:active).material-range::-moz-range-thumb{
+    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+}
+
+.material-range:active.material-range::-webkit-slider-thumb {
+    -webkit-transform:scale(1.5);
+            transform:scale(1.5);
+}
+.material-range:active.material-range::-moz-range-thumb{
+    transform:scale(1.5);
+}
+
+/* for IE :/ */
+.material-range::-ms-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #2196F3;
+    margin-left: 4px;
+    margin-right: 4px;
+    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+        
+.material-range:active::-ms-thumb {
+      background: #2196F3;
+      -webkit-transform:scale(1.5);
+         -ms-transform: scale(1.5);
+             transform: scale(1.5); 
+}
+
+.material-range:focus:not(:active).material-range::-ms-thumb{
+    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+}
+
+/* lowest value state */
+.material-range.is-lowest-value::-webkit-slider-thumb {
+      box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
+      background-color: transparent; 
+}
+    
+.material-range.is-lowest-value::-moz-range-thumb {
+      box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
+      background-color: transparent; 
+}
+
+.material-range.is-lowest-value::-ms-thumb {
+      box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
+      background-color: transparent; 
+}
+
+.material-range-container {
+    height: 18px;
+    margin: 8px 0px;
+    position: relative;
+    background: none;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -moz-box-orient: horizontal;
+        -moz-box-direction: normal;
+            flex-direction: row; 
+    -webkit-box-align: center; 
+    -webkit-align-items: center; 
+       -moz-box-align: center; 
+        -ms-flex-align: center; 
+            align-items: center;
+}
+
+.material-range-background {
+    background: rgba(0, 0, 0, .26);
+    position: absolute;
+    border-radius: 12px;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    top: -webkit-calc(50% - .5px);
+    top: calc(50% - .5px);
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    overflow: hidden;
+}
+
+.material-range-progress {
+    background-color: #2196F3;
+    width: 0;
+    -webkit-transition: 0s!important;
+    transition: 0s!important;
+}
+
+
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .material-range-background {
+        width: -webkit-calc(100% - 22px);
+        width: calc(100% - 22px);
+        left: 11px;
+    }
+}
+
+/* IE Edge 12+ CSS styles go here */ 
+@supports (-ms-ime-align:auto) {
+    .material-range-background {
+        width: -webkit-calc(100% - 22px);
+        width: calc(100% - 22px);
+        left: 11px;
+     }
+}
+
+.material-range::-ms-thumb {
+    margin-left: 11px;
+    margin-right: 11px;
 }

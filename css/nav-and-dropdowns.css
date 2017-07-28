@@ -205,6 +205,7 @@
     height: auto;
     width: auto;
     min-width: 130px;
+    background-color: #fff;
 }
 
 .dropdown-content .dropdown-item,
