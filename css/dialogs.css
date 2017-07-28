@@ -6,7 +6,6 @@
      position: fixed;
      background-color: rgba(0, 0, 0, 0.6);
      display: none;
-     padding: 8px;
  }
 
  input[type="checkbox"].overlay-toggle:checked+.overlay {
@@ -25,7 +24,7 @@
      min-width: 100px;
      width: auto;
      height: auto;
-     z-index: 9999;
+     z-index: 1000;
      display: -webkit-box;
      display: -webkit-flex;
      display: -moz-box;
@@ -38,7 +37,7 @@
         -moz-box-direction: normal;
          -ms-flex-direction: column;
              flex-direction: column;
-     margin: auto;
+    margin: auto 8px;
  }
 
  .dialog .title {
@@ -70,6 +69,7 @@
  @media screen and (min-width: 48em) {
      .dialog {
          max-width: 80%;
+         margin: auto;
      }
  }
 
