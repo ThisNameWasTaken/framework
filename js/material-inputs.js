@@ -14,7 +14,11 @@
 
             // check if it should resize automatically
             if (inputs[i].classList.contains('auto-resize')) {
+                // remove user's ability to manually rise it
+                inputs[i].classList.add('is-upgraded');
+                // resize on input
                 inputs[i].addEventListener('input', function () { Resize(this); });
+                // resize on window resize
                 window.addEventListener('resize', function () { Resize(this); })
             }
         }

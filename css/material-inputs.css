@@ -18,6 +18,10 @@
 
 textarea.material-input {
     overflow: auto;
+    resize: vertical;
+}
+
+textarea.is-upgraded {
     resize: none;
 }
 
@@ -132,7 +136,7 @@ textarea.material-input::-webkit-scrollbar {
 .material-checkbox .check,
 .material-radio .check,
 .material-switch .check {
-    margin-right: 3px;
+    margin-right: 5px;
     position: relative;
 }
 
