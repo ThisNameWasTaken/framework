@@ -426,7 +426,7 @@ textarea.material-input::-webkit-scrollbar {
     overflow: hidden;
 }
 
-.material-range-progress {
+.material-range-progressbar {
     background-color: #2196F3;
     width: 0;
     -webkit-transition: 0s!important;
