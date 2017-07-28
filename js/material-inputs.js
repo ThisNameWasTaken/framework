@@ -17,9 +17,9 @@
                 // remove user's ability to manually rise it
                 inputs[i].classList.add('is-upgraded');
                 // resize on input
-                inputs[i].addEventListener('input', function () { Resize(this); });
+                inputs[i].addEventListener('input', function () { Resize(inputs[i], event); });
                 // resize on window resize
-                window.addEventListener('resize', function () { Resize(this); })
+                window.addEventListener('resize', function () { Resize(inputs[i], event); })
             }
         }
     })();
@@ -38,10 +38,14 @@
      * Resizes a text area when an input event is triggered
      * @param {HTMLInputElement} textArea - text area input element
      */
-    function Resize(textArea) {
+    function Resize(textArea, event) {
         // resize the input so that it won't take more space that it should
         textArea.style.height = 'auto';
         textArea.style.height = textArea.scrollHeight + 'px';
+
+        if (event.type === 'resize')
+            return;
+
         /*  when the weired scroll happens because the screen is no longer big enough
             scroll back to the input */
         textArea.scrollTop = textArea.scrollHeight;
