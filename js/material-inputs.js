@@ -10,6 +10,8 @@
             // toggle the active state of the input
             inputs[i].addEventListener('blur', ToggleActive);
 
+            AddLabel(inputs[i]);
+
             // check if it should resize automatically
             if (inputs[i].classList.contains('auto-resize')) {
                 inputs[i].addEventListener('input', function () { Resize(this); });
@@ -40,6 +42,24 @@
             scroll back to the input */
         textArea.scrollTop = textArea.scrollHeight;
         window.scrollTo(window.scrollLeft, textArea.scrollHeight + textArea.scrollTop);
+    }
+
+    /**
+     * Adds a material label to the input element
+     * @param {HTMLInputElement} input - the input which needs the label
+     */
+    function AddLabel(input) {
+        if (!input.placeholder)
+            return;
+
+        // create the label
+        let label = document.createElement('label');
+        label.classList.add('material-label');
+        label.innerHTML = input.placeholder;
+        // clear the placeholder
+        input.placeholder = '';
+        // attach the label to the input group
+        input.parentElement.appendChild(label);
     }
 })();
 

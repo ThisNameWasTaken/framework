@@ -1,4 +1,4 @@
-.material-input-group {
+.material-input-container {
     position: relative;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -27,8 +27,8 @@ textarea.material-input::-webkit-scrollbar {
 
 .material-label {
     margin: auto;
-    color: #b0b0b0;
-    font-size: 18px;
+    color: #909090;
+    font-size: 16px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
