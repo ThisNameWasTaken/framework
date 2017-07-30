@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/containers.css">
     <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/overlays.css">
     <link rel="stylesheet" href="css/nav-and-dropdowns.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/shadows.css">
@@ -20,9 +21,7 @@
     <link rel="stylesheet" href="css/tags-and-badges.css">
     <link rel="stylesheet" href="css/dialogs.css">
     <link rel="stylesheet" href="css/material-inputs.css">
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css"> -->
-    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/tabs-and-accordions.css">
 
     <!-- fonts -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
@@ -32,7 +31,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="light-gray">
     <nav class="nav top dark-gray shadow-6">
         <div class="nav-left">
             <a href="" class="nav-item w3-large">Kewl Brand</a>
@@ -41,7 +40,7 @@
         <div class="nav-center">
             <a href="" class="nav-item"><i class="fa fa-twitter"></i></a>
             <a href="" class="nav-item"><i class="fa fa-facebook"></i></a>
-            <div class="nav-item dark-gray hide-xl hide-lg hide-md" id="menu-btn"><i class="material-icons">menu</i></div>
+            <label class="nav-item dark-gray hide-xl hide-lg hide-md" for="side-nav-toggle" id="menu-btn"><i class="material-icons">menu</i></label>
         </div>
 
         <div class="nav-right hide-sm">
@@ -51,8 +50,10 @@
         </div>
     </nav>
 
-    <div class="overlay hide" id="overlay">
-        <div class="sidenav" id="sidenav">
+    <input type="checkbox" class="overlay-toggle" id="side-nav-toggle">
+    <div class="overlay">
+        <label class="rest" for="side-nav-toggle" id="overlay-rest"></label>
+        <div class="sidenav">
             <a href="#" class="nav-item">Home</a>
             <a href="#" class="nav-item">About Us</a>
             <a href="#" class="nav-item">Contact</a>
@@ -189,33 +190,180 @@
 
     <div class="row">
         <div class="container">
-            <button class="button raised" id="open-dialog">open dialog</button>
+            <label class="button raised" for="dialog-overlay-toggle">open dialog</label>
         </div>
-        <div class="overlay hide" id="dialog-overlay">
-            <div class="dialog shadow-24">
-                <div class="title">Lorem ipsum dolor.</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae porro, nulla repellendus.</p>
-                <div class="actions">
-                    <button class="button text-red" id="close-dialog">Close</button>
-                    <button class="button text-blue">Proceed</button>
-                </div>
+    </div>
+
+    <input type="checkbox" class="overlay-toggle" id="dialog-overlay-toggle">
+    <div class="overlay">
+        <div class="dialog shadow-24">
+            <div class="title">Lorem ipsum dolor sit amet.</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae porro, nulla repellendus.</p>
+            <div class="actions">
+                <label class="button text-red" for="dialog-overlay-toggle">Close</label>
+                <button class="button text-blue">Proceed</button>
             </div>
         </div>
     </div>
 
+    <div class="row margin">
+        <div class="container">
+            <label class="button raised" for="no-script-dialog-check">open scirptless dialog</label>
+        </div>
+    </div>
+
+    <input type="checkbox" class="overlay-toggle" id="no-script-dialog-check">
+    <div class="overlay">
+        <div class="dialog shadow-24">
+            <div class="title">Lorem ipsum dolor.</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae porro, nulla repellendus.</p>
+            <div class="actions">
+                <label class="button text-red" for="no-script-dialog-check">Close</label>
+                <button class="button text-blue">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container" style="max-width: 900px; width: 100%;">
+            <label class="accordion button raised" for="accordion-toggle-1">accordion 1</label>
+            <input type="radio" class="accordion-toggle" id="accordion-toggle-1" name="accordions" checked>
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, facilis, ipsa. Enim placeat vel iure dolore
+                    omnis! Harum veniam quos odio nobis excepturi ipsam, molestiae porro voluptate incidunt quis dolorum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dolorum sint ullam facilis alias, eos voluptates,
+                    minus asperiores atque laudantium laboriosam ex voluptatem quam cum. Earum nesciunt natus, quidem molestiae
+                    rem inventore eligendi debitis deleniti ipsam voluptatibus perspiciatis doloremque quaerat temporibus
+                    et minima facere distinctio, blanditiis officiis. Voluptate tenetur, sequi.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat incidunt expedita quo necessitatibus, nobis,
+                    pariatur amet. Quaerat ut ea culpa perferendis esse error nobis. Similique, iure pariatur molestias quasi
+                    fuga quod quidem quo veniam. Voluptas?</p>
+            </div>
+
+            <label class="accordion button raised" for="accordion-toggle-2">accordion 2</label>
+            <input type="radio" class="accordion-toggle" id="accordion-toggle-2" name="accordions">
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, facilis, ipsa. Enim placeat vel iure dolore
+                    omnis! Harum veniam quos odio nobis excepturi ipsam, molestiae porro voluptate incidunt quis dolorum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dolorum sint ullam facilis alias, eos voluptates,
+                    minus asperiores atque laudantium laboriosam ex voluptatem quam cum. Earum nesciunt natus, quidem molestiae
+                    rem inventore eligendi debitis deleniti ipsam voluptatibus perspiciatis doloremque quaerat temporibus
+                    et minima facere distinctio, blanditiis officiis. Voluptate tenetur, sequi.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat incidunt expedita quo necessitatibus, nobis,
+                    pariatur amet. Quaerat ut ea culpa perferendis esse error nobis. Similique, iure pariatur molestias quasi
+                    fuga quod quidem quo veniam. Voluptas?</p>
+            </div>
+
+            <label class="accordion button raised" for="accordion-toggle-3">accordion 3</label>
+            <input type="radio" class="accordion-toggle" id="accordion-toggle-3" name="accordions">
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, facilis, ipsa. Enim placeat vel iure dolore
+                    omnis! Harum veniam quos odio nobis excepturi ipsam, molestiae porro voluptate incidunt quis dolorum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi dolorum sint ullam facilis alias, eos voluptates,
+                    minus asperiores atque laudantium laboriosam ex voluptatem quam cum. Earum nesciunt natus, quidem molestiae
+                    rem inventore eligendi debitis deleniti ipsam voluptatibus perspiciatis doloremque quaerat temporibus
+                    et minima facere distinctio, blanditiis officiis. Voluptate tenetur, sequi.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat incidunt expedita quo necessitatibus, nobis,
+                    pariatur amet. Quaerat ut ea culpa perferendis esse error nobis. Similique, iure pariatur molestias quasi
+                    fuga quod quidem quo veniam. Voluptas?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel" style="width: 100%; max-width: 900px;">
+            <div class="tab-group">
+                <label for="tab-1-toggle" class="tab-item">Lorem</label>
+                <label for="tab-2-toggle" class="tab-item">Deleniti</label>
+                <label for="tab-3-toggle" class="tab-item">Aliquid</label>
+            </div>
+
+            <input type="radio" name="tabs" class="tab-toggle" id="tab-1-toggle" checked>
+            <div class="tab-content red">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt rerum cupiditate dolor repudiandae,
+                    vitae et suscipit consequatur reprehenderit sed qui expedita, pariatur itaque facilis vel, consequuntur
+                    cumque ducimus.
+                </p>
+                <p>Excepturi nostrum provident, rerum eveniet, quam ut neque consectetur, ex quo mollitia ipsa voluptatibus
+                    voluptas? Delectus, nam, autem. Accusantium necessitatibus enim exercitationem architecto eius? Excepturi
+                    accusamus aliquid, voluptatem cupiditate aliquam!</p>
+            </div>
+
+            <input type="radio" name="tabs" class="tab-toggle" id="tab-2-toggle">
+            <div class="tab-content green">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fuga asperiores consequuntur ea voluptatibus
+                    eius, ut possimus dignissimos aspernatur mollitia praesentium, autem, esse voluptatum molestiae dolorum
+                    aliquid atque, sint earum.</p>
+                <p>Rem inventore nobis pariatur ratione voluptatibus magni itaque optio libero ipsum alias quidem, voluptatum
+                    ut sequi consequatur delectus modi excepturi a animi fugiat obcaecati fuga nostrum deserunt vel. Similique,
+                    debitis.
+                </p>
+            </div>
+
+            <input type="radio" name="tabs" class="tab-toggle" id="tab-3-toggle">
+            <div class="tab-content blue">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quibusdam voluptas aut, et recusandae doloribus
+                    sapiente error totam perferendis quis corrupti nostrum praesentium temporibus quidem, doloremque repellendus
+                    esse, harum architecto.</p>
+                <p>Qui dignissimos maxime quidem explicabo porro deleniti impedit eius sunt officia, laudantium iusto fuga eum
+                    iste fugit aut quam excepturi! Eos doloremque modi veniam fugiat! Blanditiis ipsa odio enim consequatur!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel" style="width: 100%; max-width: 900px;">
+            <div class="tab-group">
+                <label for="tab-4-toggle" class="tab-item">Lorem</label>
+                <label for="tab-5-toggle" class="tab-item">Deleniti</label>
+                <label for="tab-6-toggle" class="tab-item">Aliquid</label>
+            </div>
+
+            <input type="radio" name="tabs-2" class="tab-toggle" id="tab-4-toggle">
+            <div class="tab-content red">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt rerum cupiditate dolor repudiandae,
+                    vitae et suscipit consequatur reprehenderit sed qui expedita, pariatur itaque facilis vel, consequuntur
+                    cumque ducimus.
+                </p>
+                <p>Excepturi nostrum provident, rerum eveniet, quam ut neque consectetur, ex quo mollitia ipsa voluptatibus
+                    voluptas? Delectus, nam, autem. Accusantium necessitatibus enim exercitationem architecto eius? Excepturi
+                    accusamus aliquid, voluptatem cupiditate aliquam!</p>
+            </div>
+
+            <input type="radio" name="tabs-2" class="tab-toggle" id="tab-5-toggle" checked>
+            <div class="tab-content green">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fuga asperiores consequuntur ea voluptatibus
+                    eius, ut possimus dignissimos aspernatur mollitia praesentium, autem, esse voluptatum molestiae dolorum
+                    aliquid atque, sint earum.</p>
+                <p>Rem inventore nobis pariatur ratione voluptatibus magni itaque optio libero ipsum alias quidem, voluptatum
+                    ut sequi consequatur delectus modi excepturi a animi fugiat obcaecati fuga nostrum deserunt vel. Similique,
+                    debitis.
+                </p>
+            </div>
+
+            <input type="radio" name="tabs-2" class="tab-toggle" id="tab-6-toggle">
+            <div class="tab-content blue">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quibusdam voluptas aut, et recusandae doloribus
+                    sapiente error totam perferendis quis corrupti nostrum praesentium temporibus quidem, doloremque repellendus
+                    esse, harum architecto.</p>
+                <p>Qui dignissimos maxime quidem explicabo porro deleniti impedit eius sunt officia, laudantium iusto fuga eum
+                    iste fugit aut quam excepturi! Eos doloremque modi veniam fugiat! Blanditiis ipsa odio enim consequatur!</p>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row dark-gray">
         <div class="container margin-bottom" style="width: 100%; max-width: 900px">
             <form>
-                <div class="material-input-group text-blue">
-                    <input class="material-input" type="text" name="username">
+                <div class="material-input-container text-blue">
+                    <input class="material-input" type="text" name="username" placeholder="Username">
                     <span class="material-bar"></span>
-                    <label class="material-label">User</label>
                 </div>
 
-                <div class="material-input-group text-blue">
-                    <textarea class="material-input self-resize"></textarea>
+                <div class="material-input-container text-blue">
+                    <textarea class="material-input auto-resize" placeholder="Type in here"></textarea>
                     <span class="material-bar"></span>
-                    <label class="material-label">Type here</label>
                 </div>
             </form>
 
@@ -223,7 +371,7 @@
 
             <label class="material-checkbox w3-large" for="checkbox-1">
                 <input type="checkbox" id="checkbox-1">
-                <span class="check"></span>
+                <span class="check text-dark-gray"></span>
                 <span class="text">Checkbox</span>
             </label>
 
@@ -255,13 +403,20 @@
                 <span class="text">Switch</span>
             </label>
 
-            <div class="element"></div>
+            <br>
+
+            <div class="material-range-container">
+                <input class="material-range" type="range" min="0" max="100" step="1" value="20">
+                <div class="material-range-background">
+                    <div class="material-range-progressbar"></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="js/sidenav.js"></script>
-    <script src="js/dialog.js"></script>
     <script src="js/material-inputs.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/tabs.js"></script>
 </body>
 
 </html>
