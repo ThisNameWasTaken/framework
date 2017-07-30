@@ -1,0 +1,61 @@
+.accordion {
+    width: 100%;
+    display: block;
+}
+
+.tab-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    width: 100%;
+}
+
+.tab-item {
+    border-radius: 0px;
+}
+
+.tab-item .tab-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #000;
+    width: 0;
+    -webkit-transition: 0s ease;
+    transition: 0s ease;
+}
+
+.tab-item.is-active .tab-bar {
+    width: 100%;
+    -webkit-transition: .13s ease;
+    transition: .13s ease;
+}
+
+.tab-toggle,
+.accordion-toggle {
+    display: none!important;
+}
+
+.tab-content,
+.accordion-content {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    opacity: 0;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.tab-toggle:checked+.tab-content,
+.accordion-toggle:checked+.accordion-content {
+    padding: 16px;
+    opacity: 1;
+    height: auto;
+}
+}
