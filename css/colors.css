@@ -347,3 +347,25 @@
 .hover-transparent:hover {
     background-color: transparent!important
 }
+
+.primary,
+.hover-primary:hover {
+    color: #fff!important;
+    background-color: #2196F3!important
+}
+
+.text-primary,
+.hover-text-primary:hover {
+    color: #2196F3!important
+}
+
+.accent,
+.hover-accent:hover {
+    color: #000!important;
+    background-color: #ff9800!important
+}
+
+.text-accent,
+.hover-text-accent:hover {
+    color: #ff9800!important
+}
