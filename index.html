@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/containers.css">
     <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/overlays.css">
     <link rel="stylesheet" href="css/nav-and-dropdowns.css">
-    <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/shadows.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/colors.css">
@@ -34,13 +34,13 @@
 <body class="light-gray">
     <nav class="nav top dark-gray shadow-6">
         <div class="nav-left">
-            <a href="" class="nav-item w3-large">Kewl Brand</a>
+            <a href="" class="nav-item h3">Kewl Brand</a>
         </div>
 
         <div class="nav-center">
             <a href="" class="nav-item"><i class="fa fa-twitter"></i></a>
             <a href="" class="nav-item"><i class="fa fa-facebook"></i></a>
-            <label class="nav-item dark-gray hide-xl hide-lg hide-md" for="side-nav-toggle" id="menu-btn"><i class="material-icons">menu</i></label>
+            <label class="nav-item opens-overlay dark-gray hide-xl hide-lg hide-md" for="side-nav-toggle"><i class="material-icons">menu</i></label>
         </div>
 
         <div class="nav-right hide-sm">
@@ -52,7 +52,7 @@
 
     <input type="checkbox" class="overlay-toggle" id="side-nav-toggle">
     <div class="overlay">
-        <label class="rest" for="side-nav-toggle" id="overlay-rest"></label>
+        <label class="overlay-bg closes-overlay" for="side-nav-toggle"></label>
         <div class="sidenav">
             <a href="#" class="nav-item">Home</a>
             <a href="#" class="nav-item">About Us</a>
@@ -63,25 +63,25 @@
     <div class="nav-offset"></div>
 
     <div class="row">
-        <div class="col md-6 lg-3 w3-red">
+        <div class="col md-6 lg-3 red">
             <div class="panel">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus veritatis iure voluptatum asperiores,
                     explicabo error!
                 </p>
             </div>
         </div>
-        <div class="col md-6 lg-3 w3-green">
+        <div class="col md-6 lg-3 green">
             <div class="panel">
                 <p>Rerum adipisci quis eveniet nam ea obcaecati corporis, ullam commodi culpa assumenda nesciunt. Aperiam, voluptates.
                 </p>
             </div>
         </div>
-        <div class="col md-6 lg-3 w3-blue">
+        <div class="col md-6 lg-3 blue">
             <div class="panel">
                 <p>Est nemo, unde, officia dolor ut facilis tempore delectus repellat. Repellat quo, natus dolores saepe.</p>
             </div>
         </div>
-        <div class="col md-6 lg-3 w3-yellow">
+        <div class="col md-6 lg-3 yellow">
             <div class="panel">
                 <p>Animi, dolorem, pariatur. Commodi, iste, fugiat nisi incidunt obcaecati non cupiditate. Sit excepturi quae
                     eos.
@@ -190,17 +190,18 @@
 
     <div class="row">
         <div class="container">
-            <label class="button raised" for="dialog-overlay-toggle">open dialog</label>
+            <label class="button raised opens-overlay" for="dialog-overlay-toggle">open dialog</label>
         </div>
     </div>
 
     <input type="checkbox" class="overlay-toggle" id="dialog-overlay-toggle">
     <div class="overlay">
+        <label class="overlay-bg closes-overlay" for="dialog-overlay-toggle"></label>
         <div class="dialog shadow-24">
             <div class="title">Lorem ipsum dolor sit amet.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae porro, nulla repellendus.</p>
             <div class="actions">
-                <label class="button text-red" for="dialog-overlay-toggle">Close</label>
+                <label class="button text-red closes-overlay" for="dialog-overlay-toggle">Close</label>
                 <button class="button text-blue">Proceed</button>
             </div>
         </div>
@@ -208,17 +209,18 @@
 
     <div class="row margin">
         <div class="container">
-            <label class="button raised" for="no-script-dialog-check">open scirptless dialog</label>
+            <label class="button raised opens-overlay" for="no-script-dialog-check">open scirptless dialog</label>
         </div>
     </div>
 
     <input type="checkbox" class="overlay-toggle" id="no-script-dialog-check">
     <div class="overlay">
+        <label class="overlay-bg closes-overlay" for="no-script-dialog-check"></label>
         <div class="dialog shadow-24">
             <div class="title">Lorem ipsum dolor.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae porro, nulla repellendus.</p>
             <div class="actions">
-                <label class="button text-red" for="no-script-dialog-check">Close</label>
+                <label class="button text-red closes-overlay" for="no-script-dialog-check">Close</label>
                 <button class="button text-blue">Proceed</button>
             </div>
         </div>
@@ -273,9 +275,9 @@
     <div class="row">
         <div class="panel" style="width: 100%; max-width: 900px;">
             <div class="tab-group">
-                <label for="tab-1-toggle" class="tab-item">Lorem</label>
-                <label for="tab-2-toggle" class="tab-item">Deleniti</label>
-                <label for="tab-3-toggle" class="tab-item">Aliquid</label>
+                <label for="tab-1-toggle" class="tab">Lorem</label>
+                <label for="tab-2-toggle" class="tab">Deleniti</label>
+                <label for="tab-3-toggle" class="tab">Aliquid</label>
             </div>
 
             <input type="radio" name="tabs" class="tab-toggle" id="tab-1-toggle" checked>
@@ -314,9 +316,9 @@
     <div class="row">
         <div class="panel" style="width: 100%; max-width: 900px;">
             <div class="tab-group">
-                <label for="tab-4-toggle" class="tab-item">Lorem</label>
-                <label for="tab-5-toggle" class="tab-item">Deleniti</label>
-                <label for="tab-6-toggle" class="tab-item">Aliquid</label>
+                <label for="tab-4-toggle" class="tab">Lorem</label>
+                <label for="tab-5-toggle" class="tab">Deleniti</label>
+                <label for="tab-6-toggle" class="tab">Aliquid</label>
             </div>
 
             <input type="radio" name="tabs-2" class="tab-toggle" id="tab-4-toggle">
@@ -369,7 +371,7 @@
 
             <br>
 
-            <label class="material-checkbox w3-large" for="checkbox-1">
+            <label class="material-checkbox" for="checkbox-1">
                 <input type="checkbox" id="checkbox-1">
                 <span class="check text-dark-gray"></span>
                 <span class="text">Checkbox</span>
@@ -377,19 +379,19 @@
 
             <br>
 
-            <label class="material-radio w3-large" for="radio-2">
+            <label class="material-radio" for="radio-2">
                 <input type="radio" id="radio-2" name="radios">
                 <span class="check"></span>
                 <span class="text">Radio</span>
             </label>
 
-            <label class="material-radio w3-large" for="radio-1">
+            <label class="material-radio" for="radio-1">
                 <input type="radio" id="radio-1" name="radios">
                 <span class="check"></span>
                 <span class="text">Radio</span>
             </label>
 
-            <label class="material-radio w3-large" for="radio-3">
+            <label class="material-radio" for="radio-3">
                 <input type="radio" id="radio-3" name="radios">
                 <span class="check"></span>
                 <span class="text">Radio</span>
@@ -397,7 +399,7 @@
 
             <br>
 
-            <label class="material-switch w3-large" for="switch-1">
+            <label class="material-switch" for="switch-1">
                 <input type="checkbox" id="switch-1">
                 <span class="check"></span>
                 <span class="text">Switch</span>
@@ -415,7 +417,7 @@
     </div>
 
     <script src="js/material-inputs.js"></script>
-    <script src="js/sidenav.js"></script>
+    <script src="js/overlays.js"></script>
     <script src="js/tabs.js"></script>
 </body>
 
