@@ -4,8 +4,8 @@
     let tabGroups = document.getElementsByClassName('tab-group');
 
     for (let i = 0; i < tabGroups.length; i++) {
-        let tabItems = tabGroups[i].getElementsByClassName('tab-item');
-        let lastActiveTabItem = undefined;
+        let tabItems = tabGroups[i].getElementsByClassName('tab');
+        let lastActiveTab = undefined;
 
         for (let i = 0; i < tabItems.length; i++) {
             let tabToggle = document.getElementById(tabItems[i].getAttribute('for'));
@@ -26,14 +26,14 @@
         }
 
         function SetTabActive() {
-            if (lastActiveTabItem === this)
+            if (lastActiveTab === this)
                 return;
 
-            if (lastActiveTabItem)
-                lastActiveTabItem.classList.remove('is-active');
+            if (lastActiveTab)
+                lastActiveTab.classList.remove('is-active');
 
             this.classList.add('is-active');
-            lastActiveTabItem = this;
+            lastActiveTab = this;
         }
     }
 })();

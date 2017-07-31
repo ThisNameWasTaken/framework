@@ -13,11 +13,11 @@
     width: 100%;
 }
 
-.tab-item {
+.tab {
     border-radius: 0px;
 }
 
-.tab-item .tab-bar {
+.tab .tab-bar {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -25,12 +25,14 @@
     background-color: #000;
     width: 0;
     -webkit-transition: 0s ease;
+    -o-transition: 0s ease;
     transition: 0s ease;
 }
 
-.tab-item.is-active .tab-bar {
+.tab.is-active .tab-bar {
     width: 100%;
     -webkit-transition: .13s ease;
+    -o-transition: .13s ease;
     transition: .13s ease;
 }
 

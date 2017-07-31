@@ -62,26 +62,26 @@
     border-radius: 2px;
 }
 
-.w3-border-0 {
+.border-0 {
     border: 0!important
 }
 
-.w3-border {
+.border {
     border: 1px solid #ccc!important
 }
 
-.w3-border-top {
+.border-top {
     border-top: 1px solid #ccc!important
 }
 
-.w3-border-bottom {
+.border-bottom {
     border-bottom: 1px solid #ccc!important
 }
 
-.w3-border-left {
+.border-left {
     border-left: 1px solid #ccc!important
 }
 
-.w3-border-right {
+.border-right {
     border-right: 1px solid #ccc!important
 }
