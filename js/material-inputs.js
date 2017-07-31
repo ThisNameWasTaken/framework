@@ -2,27 +2,30 @@
 (function () {
     'use strict';
 
-    (function UpdateInputEvents() {
-        let inputs = document.getElementsByClassName('material-input');
+    let inputs = document.getElementsByClassName('material-input');
 
-        // each time the user clicks outside the form
-        for (let i = 0; i < inputs.length; i++) {
-            // toggle the active state of the input
-            inputs[i].addEventListener('blur', ToggleActive);
+    // each time the user clicks outside the form
+    for (let i = 0; i < inputs.length; i++) {
+        // toggle the active state of the input
+        inputs[i].addEventListener('blur', ToggleActive);
 
-            AddLabel(inputs[i]);
+        AddLabel(inputs[i]);
 
-            // check if it should resize automatically
-            if (inputs[i].classList.contains('auto-resize')) {
-                // remove user's ability to manually rise it
-                inputs[i].classList.add('is-upgraded');
-                // resize on input
-                inputs[i].addEventListener('input', function () { Resize(inputs[i], event); });
-                // resize on window resize
-                window.addEventListener('resize', function () { Resize(inputs[i], event); })
-            }
+        // check if it should resize automatically
+        if (inputs[i].classList.contains('auto-resize')) {
+            // remove user's ability to manually rise it
+            inputs[i].classList.add('is-upgraded');
+
+            // attach the mirrored text area
+            let mirroredTextarea = document.createElement('div');
+            mirroredTextarea.classList.add('mirrored-textarea');
+            inputs[i].parentElement.appendChild(mirroredTextarea);
+
+            // resize on input or window resize
+            inputs[i].addEventListener('input', function () { Resize(this, mirroredTextarea); });
+            window.addEventListener('resize', function () { Resize(inputs[i], mirroredTextarea); });
         }
-    })();
+    }
 
     /**
      * Toggles the active state of material inputs
@@ -35,21 +38,14 @@
     }
 
     /**
-     * Resizes a text area when an input event is triggered
-     * @param {HTMLInputElement} textArea - text area input element
+     * Resizes a text area when an input or window resize event is triggered
+     * @param {HTMLInputElement} textarea - textarea input element
+     * @param {HTMLElement} mirroredTextarea - the mirrored element for the textarea
      */
-    function Resize(textArea, event) {
-        // resize the input so that it won't take more space that it should
-        textArea.style.height = 'auto';
-        textArea.style.height = textArea.scrollHeight + 'px';
+    function Resize(textarea, mirroredTextarea) {
+        mirroredTextarea.textContent = textarea.value;
 
-        if (event.type === 'resize')
-            return;
-
-        /*  when the weired scroll happens because the screen is no longer big enough
-            scroll back to the input */
-        textArea.scrollTop = textArea.scrollHeight;
-        window.scrollTo(window.scrollLeft, textArea.scrollHeight + textArea.scrollTop);
+        textarea.style.height = mirroredTextarea.scrollHeight + 'px';
     }
 
     /**

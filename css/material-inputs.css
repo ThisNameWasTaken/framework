@@ -1,18 +1,17 @@
 .material-input-container {
     position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 24px 0px;
     color: #111;
     background-color: currentColor;
 }
 
 .material-input {
     margin: auto;
-    padding: 10px 20px;
+    padding: 10px 16px;
     display: block;
     width: 100%;
     border: none;
-    border-bottom: 1px solid #b0b0b0;
+    border-bottom: 2px solid #b0b0b0;
     outline: none;
 }
 
@@ -23,10 +22,30 @@ textarea.material-input {
 
 textarea.material-input.is-upgraded {
     resize: none;
+    overflow: hidden;
 }
 
-textarea.material-input.is-upgraded::-webkit-scrollbar {
-    display: none;
+textarea.material-input,
+.mirrored-textarea {
+    min-height: 100px;
+    padding: 16px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    word-break: break-all!important;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.mirrored-textarea {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    z-index: -99;
+    opacity: 0;
 }
 
 .material-label {
@@ -36,7 +55,7 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 20px;
+    left: 16px;
     top: 10px;
 }
 
@@ -44,8 +63,8 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
 /* active state */
 .material-input:focus~.material-label,
 .material-input.active~.material-label {
-    top: -20px;
-    left: 5px;
+    top: -18px;
+    left: 4px;
     font-size: 14px;
     color: inherit;
 }
@@ -63,7 +82,7 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
 .material-bar::before,
 .material-bar::after {
     content: '';
-    height: 3px;
+    height: 2px;
     width: 0;
     bottom: 0px;
     position: absolute;
@@ -157,7 +176,8 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
     z-index: 2;
     opacity: 0;
     -webkit-transition-delay: 0s;
-            transition-delay: 0s;
+            -o-transition-delay: 0s;
+       transition-delay: 0s;
 }
 
 /* active state */
@@ -168,14 +188,16 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
 .material-checkbox input:checked+.check::after {
     opacity: 1;
     -webkit-transition-delay: .2s;
-            transition-delay: .2s;
+            -o-transition-delay: .2s;
+       transition-delay: .2s;
 }
 
 /* radio buttons */
 /* layer 0 */
 .material-radio .check {
     border-radius: 50%;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.55);
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.55);
 }
 
 /* layer 1 */
@@ -194,7 +216,8 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
 
 /* active state */
 .material-radio input:checked+.check {
-    box-shadow: inset 0 0 0 2px #2196F3;
+    -webkit-box-shadow: inset 0 0 0 2px #2196F3;
+            box-shadow: inset 0 0 0 2px #2196F3;
 }
 
 .material-radio input:checked+.check::after {
@@ -225,7 +248,8 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
     width: 20px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     z-index: 1;
 }
 
@@ -237,7 +261,8 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
 .material-switch input:checked+.check::after {
     background-color: #2196F3;
     left: 16px;
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); 
+    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); 
 }
 
 /* material range */
@@ -308,13 +333,18 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
             appearance: none!important;
     width: 12px;
     height: 12px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 50%;
     background: #2196F3;
     border: none;
     -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -330,13 +360,18 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
     border: none;
     transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* thumb active state */
 .material-range:focus:not(:active).material-range::-webkit-slider-thumb {
-    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+    -webkit-box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+            box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
 }
 
 .material-range:focus:not(:active).material-range::-moz-range-thumb{
@@ -362,7 +397,11 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
     margin-right: 4px;
     transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
         
@@ -379,7 +418,8 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
 
 /* lowest value state */
 .material-range.is-lowest-value::-webkit-slider-thumb {
-      box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
+      -webkit-box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
+              box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
       background-color: transparent; 
 }
     
@@ -438,6 +478,7 @@ textarea.material-input.is-upgraded::-webkit-scrollbar {
     background-color: #2196F3;
     width: 0;
     -webkit-transition: 0s!important;
+    -o-transition: 0s!important;
     transition: 0s!important;
 }
 
