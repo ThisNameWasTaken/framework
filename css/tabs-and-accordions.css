@@ -31,9 +31,9 @@
 
 .tab.is-active .tab-bar {
     width: 100%;
-    -webkit-transition: .13s ease;
-    -o-transition: .13s ease;
-    transition: .13s ease;
+    -webkit-transition: .15s ease;
+    -o-transition: .15s ease;
+    transition: .15s ease;
 }
 
 .tab-toggle,
