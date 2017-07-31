@@ -130,7 +130,8 @@
 @media screen and (max-width: 48em) {
     .nav-menu.nav-right {
         background-color: inherit;
-        box-shadow: 0 4px 7px rgba(10, 10, 10, 0.1);
+        -webkit-box-shadow: 0 4px 7px rgba(10, 10, 10, 0.1);
+                box-shadow: 0 4px 7px rgba(10, 10, 10, 0.1);
         left: 0;
         display: none;
         right: 0;
@@ -180,7 +181,7 @@
     width: 200px;
     background-color: #fff;
     position: fixed!important;
-    z-index: 99;
+    z-index: 1001;
     overflow: auto;
     right: 0;
     top: 0;
@@ -227,6 +228,7 @@
     line-height: 48px;
     white-space: nowrap;
     -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-user-select: none;
     -moz-user-select: none;

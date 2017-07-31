@@ -1,11 +1,19 @@
+.overlay,
+.overlay-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 .overlay {
      z-index: 999;
      top: 0;
-     width: 100%;
-     height: 100%;
-     position: fixed;
-     background-color: rgba(0, 0, 0, 0.6);
      display: none;
+}
+
+.overlay-bg {
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .overlay-toggle {
