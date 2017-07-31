@@ -4,8 +4,6 @@
      background-color: #fff;
      color: #000;
      min-width: 100px;
-     width: auto;
-     height: auto;
      z-index: 1001;
      display: -webkit-box;
      display: -webkit-flex;
@@ -19,7 +17,20 @@
         -moz-box-direction: normal;
          -ms-flex-direction: column;
              flex-direction: column;
-    margin: auto 8px;
+     margin: auto;
+}
+
+/* For IE 10+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .dialog {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%); 
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); 
+        max-width: 90%;
+    }
 }
 
 .dialog .title {
