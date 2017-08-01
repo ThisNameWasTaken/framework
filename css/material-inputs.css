@@ -11,7 +11,8 @@
     display: block;
     width: 100%;
     border: none;
-    border-bottom: 2px solid #b0b0b0;
+    border-bottom: 3px solid rgba(0, 0, 0, .55);
+    background-color: #f0f0f0;
     outline: none;
 }
 
@@ -50,7 +51,7 @@ textarea.material-input,
 
 .material-label {
     margin: auto;
-    color: #909090;
+    color: rgba(0, 0, 0, .55);
     font-size: 16px;
     font-weight: normal;
     position: absolute;
@@ -82,7 +83,7 @@ textarea.material-input,
 .material-bar::before,
 .material-bar::after {
     content: '';
-    height: 2px;
+    height: 3px;
     width: 0;
     bottom: 0px;
     position: absolute;
@@ -370,12 +371,12 @@ textarea.material-input,
 
 /* thumb active state */
 .material-range:focus:not(:active).material-range::-webkit-slider-thumb {
-    -webkit-box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
-            box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+    -webkit-box-shadow: 0 0 0 8px rgba(33, 150, 243, .26);
+            box-shadow: 0 0 0 8px rgba(33, 150, 243, .26);
 }
 
 .material-range:focus:not(:active).material-range::-moz-range-thumb{
-    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+    box-shadow: 0 0 0 8px rgba(33, 150, 243, .26);
 }
 
 .material-range:active.material-range::-webkit-slider-thumb {
@@ -413,7 +414,7 @@ textarea.material-input,
 }
 
 .material-range:focus:not(:active).material-range::-ms-thumb{
-    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
+    box-shadow: 0 0 0 8px rgba(33, 150, 243, .26);
 }
 
 /* lowest value state */
