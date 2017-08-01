@@ -182,23 +182,20 @@ input.button[type="submit"] {
 
 .button[disabled],
 .button.disabled {
-    color: rgba(0, 0, 0, 0.26);
-    cursor: default;
-    background-color: transparent;
+    cursor: not-allowed!important;
+    color: rgba(0, 0, 0, 0.26)!important;
+    background-color: transparent!important;
+    -webkit-box-shadow: none!important;
+            box-shadow: none!important;
 }
 
-.button-fab[disabled],
-.button-fab.disabled {
-    background-color: rgba(0, 0, 0, 0.12);
-    color: rgba(0, 0, 0, 0.26);
-}
-
+.button.fab[disabled],
+.button.fab.disabled,
+.button.mini-fab[disabled],
+.button.mini-fab.disabled,
 .button.raised[disabled],
 .button.raised.disabled {
-    background-color: rgba(0, 0, 0, 0.12);
-    color: rgba(0, 0, 0, 0.26);
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12)!important;
 }
 
 .button.round {

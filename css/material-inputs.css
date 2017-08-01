@@ -1,7 +1,6 @@
 .material-input-container {
     position: relative;
     margin: 24px 0px;
-    color: #111;
     background-color: currentColor;
 }
 
@@ -11,7 +10,7 @@
     display: block;
     width: 100%;
     border: none;
-    border-bottom: 3px solid rgba(0, 0, 0, .55);
+    border-bottom: 3px solid rgba(0, 0, 0, .26);
     background-color: #f0f0f0;
     outline: none;
 }
@@ -171,7 +170,7 @@ textarea.material-input,
 
 /* layer 2 */
 .material-checkbox .check::after {
-    font-family: "Material Icons";
+    font-family: "Material Icons"!important;
     content: "check";
     position: absolute;
     z-index: 2;
@@ -417,8 +416,8 @@ textarea.material-input,
     box-shadow: 0 0 0 8px rgba(33, 150, 243, .26);
 }
 
-/* lowest value state */
-.material-range.is-lowest-value::-webkit-slider-thumb {
+/* lowest value / disabled state */
+.material-range.is-lowest-value::-webkit-slider-thumb, {
       -webkit-box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
               box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
       background-color: transparent; 
@@ -505,4 +504,65 @@ textarea.material-input,
 .material-range::-ms-thumb {
     margin-left: 11px;
     margin-right: 11px;
+}
+
+/* disabled states */
+.material-input[disabled],
+.material-input.disabled,
+.material-checkbox[disabled],
+.material-checkbox.disabled,
+.material-radio[disabled],
+.material-radio.disabled,
+.material-switch[disabled],
+.material-switch.disabled,
+.material-range[disabled],
+.material-range.disabled {
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.26)!important;
+}
+
+.material-checkbox[disabled] .check,
+.material-checkbox.disabled .check,
+.material-radio[disabled] .check,
+.material-radio.disabled .check,
+.material-switch[disabled] .check,
+.material-switch.disabled .check {
+    pointer-events: none;
+}
+
+.material-checkbox.disabled .check::before,
+.material-checkbox[disabled] .check::before{
+    border: 2px solid rgba(0, 0, 0, 0.26)!important;
+}
+
+.material-radio.disabled .check,
+.material-radio[disabled] .check {
+    -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.26)!important;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.26)!important;
+}
+
+.material-switch.disabled .check::after,
+.material-switch[disabled] .check::after { 
+    background-color: #ccc;
+}
+
+.material-range[disabled]::-webkit-slider-thumb,
+.material-range.disabled::-webkit-slider-thumb {
+      -webkit-box-shadow: none!important;
+              box-shadow: none!important;
+      -webkit-transform: scale(1)!important; 
+              transform: scale(1)!important;
+}
+    
+.material-range[disabled]::-moz-range-thumb,
+.material-range.disabled::-moz-range-thumb {
+      box-shadow: none!important;
+      transform: scale(1)!important;
+}
+
+.material-range[disabled]::-ms-thumb,
+.material-range.disabled::-ms-thumb {
+      box-shadow: none!important;
+      -ms-transform: scale(1)!important; 
+          transform: scale(1)!important;
 }

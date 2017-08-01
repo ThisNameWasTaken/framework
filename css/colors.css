@@ -306,43 +306,6 @@
     color: #616161!important
 }
 
-.border-red,
-.hover-border-red:hover {
-    border-color: #f44336!important
-}
-
-.border-green,
-.hover-border-green:hover {
-    border-color: #4CAF50!important
-}
-
-.border-blue,
-.hover-border-blue:hover {
-    border-color: #2196F3!important
-}
-
-.border-yellow,
-.hover-border-yellow:hover {
-    border-color: #ffeb3b!important
-}
-
-.border-white,
-.hover-border-white:hover {
-    border-color: #fff!important
-}
-
-.border-black,
-.hover-border-black:hover {
-    border-color: #000!important
-}
-
-.border-grey,
-.hover-border-grey:hover,
-.border-gray,
-.hover-border-gray:hover {
-    border-color: #bbb!important
-}
-
 .transparent,
 .hover-transparent:hover {
     background-color: transparent!important
