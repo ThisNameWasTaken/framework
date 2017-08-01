@@ -183,8 +183,15 @@
     position: fixed!important;
     z-index: 1001;
     overflow: auto;
-    right: 0;
     top: 0;
+}
+
+.sidenav.left {
+    left: 0;
+}
+
+.sidenav.right {
+    right: 0;
 }
 
 .dropdown,
