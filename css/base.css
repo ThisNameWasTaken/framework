@@ -25,9 +25,7 @@
              transition: all .3s ease, color 0s, visibility 0s;
  }
 
- *:not(.fa),
- *:not(.fa)::before,
- *:not(.fa)::after {
+ *:not(.fa) {
      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
  }
 
