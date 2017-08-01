@@ -23,9 +23,36 @@
      -webkit-transition: all .3s ease, color 0s, visibility 0s;
           -o-transition: all .3s ease, color 0s, visibility 0s;
              transition: all .3s ease, color 0s, visibility 0s;
+             
+     /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    -webkit-font-feature-settings: 'liga';
+       -moz-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
  }
 
- *:not(.fa) {
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/material-icons/MaterialIcons-Regular.eot"); /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url("../font/material-icons/MaterialIcons-Regular.woff2") format('woff2'),
+        url("../font/material-icons/MaterialIcons-Regular.woff") format('woff'),
+        url("../font/material-icons/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+ *:not(.fa),
+ *:not(.fa)::before,
+ *:not(.fa)::after {
      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
  }
 

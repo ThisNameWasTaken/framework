@@ -139,6 +139,7 @@ textarea.material-input,
 .material-checkbox .check::after,
 .material-radio .check,
 .material-radio .check::after,
+.material-radio .check::before,
 .material-switch .check,
 .material-switch .check::after {
     width: 16px;
@@ -194,18 +195,19 @@ textarea.material-input,
 
 /* radio buttons */
 /* layer 0 */
-.material-radio .check {
+.material-radio .check::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
     border-radius: 50%;
-    -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.55);
-            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.55);
+    border: 2px solid rgba(0, 0, 0, 0.55);
 }
 
 /* layer 1 */
-.material-radio .check::after {
-    border-radius: 50%;    
+.material-radio .check::after {  
     content: "";
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     border-radius: 50%;
     background-color: #2196F3;
     opacity: 0;
@@ -215,16 +217,15 @@ textarea.material-input,
 }
 
 /* active state */
-.material-radio input:checked+.check {
-    -webkit-box-shadow: inset 0 0 0 2px #2196F3;
-            box-shadow: inset 0 0 0 2px #2196F3;
+.material-radio input:checked+.check::before {
+    border: 2px solid #2196f3;
 }
 
 .material-radio input:checked+.check::after {
     opacity: 1;
-    -webkit-transform: scale(.5);
-        -ms-transform: scale(.5);
-            transform: scale(.5);
+    -webkit-transform: scale(.45);
+        -ms-transform: scale(.45);
+            transform: scale(.45);
 }
 
 /* switch */
@@ -531,14 +532,10 @@ textarea.material-input,
 }
 
 .material-checkbox.disabled .check::before,
-.material-checkbox[disabled] .check::before{
+.material-checkbox[disabled] .check::before,
+.material-radio.disabled .check::before,
+.material-radio[disabled] .check::before{
     border: 2px solid rgba(0, 0, 0, 0.26)!important;
-}
-
-.material-radio.disabled .check,
-.material-radio[disabled] .check {
-    -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.26)!important;
-            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.26)!important;
 }
 
 .material-switch.disabled .check::after,
