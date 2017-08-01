@@ -15,7 +15,6 @@
  *,
  *::before,
  *::after {
-     font-family: "Roboto", "Helvetica", "Arial", sans-serif!important;
      margin: 0;
      padding: 0;
      -webkit-box-sizing: border-box;
@@ -24,6 +23,12 @@
      -webkit-transition: all .3s ease, color 0s, visibility 0s;
           -o-transition: all .3s ease, color 0s, visibility 0s;
              transition: all .3s ease, color 0s, visibility 0s;
+ }
+
+ *:not(.fa),
+ *:not(.fa)::before,
+ *:not(.fa)::after {
+     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
  }
 
 ::-moz-selection {
