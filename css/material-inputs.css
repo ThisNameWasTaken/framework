@@ -104,7 +104,6 @@ textarea.material-input,
 }
 
 /* checkboxes and radio buttons */
-
 .material-checkbox input[type="checkbox"],
 .material-radio input[type="radio"],
 .material-switch input[type="checkbox"] {
@@ -112,14 +111,19 @@ textarea.material-input,
 }
 
 .material-checkbox .text,
-.material-radio .text {
+.material-radio .text,
+.material-switch .text {
     font-size: 16px;
+    padding-left: 5px;
+}
+
+.material-switch .text {
+    padding-top: 0.125em;
 }
 
 .material-checkbox,
 .material-radio,
 .material-switch {
-    cursor: pointer;
     position: relative;
     z-index: 1;
     display: -webkit-inline-box;
@@ -127,11 +131,17 @@ textarea.material-input,
     display: -moz-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    -webkit-box-align: center;
     -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
+      -webkit-box-align: center;
+         -moz-box-align: center;
+         -ms-flex-align: center;
             align-items: center;
+}
+
+.material-checkbox *,
+.material-radio *,
+.material-switch *{
+    cursor: pointer;
 }
 
 .material-checkbox .check,
@@ -148,15 +158,14 @@ textarea.material-input,
     font-size: 16px;
     display: inline-block;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .material-checkbox .check,
 .material-radio .check,
 .material-switch .check {
-    margin-right: 5px;
     position: relative;
 }
 
@@ -177,8 +186,8 @@ textarea.material-input,
     z-index: 2;
     opacity: 0;
     -webkit-transition-delay: 0s;
-            -o-transition-delay: 0s;
-       transition-delay: 0s;
+         -o-transition-delay: 0s;
+            transition-delay: 0s;
 }
 
 /* active state */
@@ -189,8 +198,8 @@ textarea.material-input,
 .material-checkbox input:checked+.check::after {
     opacity: 1;
     -webkit-transition-delay: .2s;
-            -o-transition-delay: .2s;
-       transition-delay: .2s;
+         -o-transition-delay: .2s;
+            transition-delay: .2s;
 }
 
 /* radio buttons */
@@ -244,11 +253,10 @@ textarea.material-input,
     background-color: #fff;
     position: absolute;
     left: 0;
-    top: -3px;
+    top: -3.5px;
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    cursor: pointer;
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     z-index: 1;
@@ -281,8 +289,8 @@ textarea.material-input,
     cursor: pointer;
     z-index: 1;
     -webkit-align-self: center;
-        -ms-flex-item-align: center;
-                -ms-grid-row-align: center;
+   -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
             align-self: center;
 }
 
@@ -396,42 +404,17 @@ textarea.material-input,
     background: #2196F3;
     margin-left: 4px;
     margin-right: 4px;
-    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: border 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-    -o-transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), border 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
         
 .material-range:active::-ms-thumb {
-      background: #2196F3;
-      -webkit-transform:scale(1.5);
-         -ms-transform: scale(1.5);
-             transform: scale(1.5); 
+    background: #2196F3;
+    -webkit-transform:scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5); 
 }
 
 .material-range:focus:not(:active).material-range::-ms-thumb{
-    box-shadow: 0 0 0 8px rgba(33, 150, 243, .26);
-}
-
-/* lowest value / disabled state */
-.material-range.is-lowest-value::-webkit-slider-thumb, {
-      -webkit-box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
-              box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
-      background-color: transparent; 
-}
-    
-.material-range.is-lowest-value::-moz-range-thumb {
-      box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
-      background-color: transparent; 
-}
-
-.material-range.is-lowest-value::-ms-thumb {
-      box-shadow: 0 0 0 2px rgba(0,0,0, 0.26);
-      background-color: transparent; 
+    box-shadow: 0 0 0 6px rgba(33, 150, 243, .26);
 }
 
 .material-range-container {
@@ -507,59 +490,68 @@ textarea.material-input,
     margin-right: 11px;
 }
 
-/* disabled states */
-.material-input[disabled],
-.material-input.disabled,
-.material-checkbox[disabled],
-.material-checkbox.disabled,
-.material-radio[disabled],
-.material-radio.disabled,
-.material-switch[disabled],
-.material-switch.disabled,
-.material-range[disabled],
-.material-range.disabled {
-    cursor: not-allowed;
+/* disabled state */
+[class*=material-] input[disabled]~*,
+[class*=material-] input.disabled~*,
+[class*=material-] input[disabled],
+[class*=material-] input.disabled,
+[class*=material-] textarea[disabled]~*,
+[class*=material-] textarea.disabled~*,
+[class*=material-] textarea[disabled],
+[class*=material-] textarea.disabled {
+    cursor: not-allowed!important;
     color: rgba(0, 0, 0, 0.26)!important;
 }
 
-.material-checkbox[disabled] .check,
-.material-checkbox.disabled .check,
-.material-radio[disabled] .check,
-.material-radio.disabled .check,
-.material-switch[disabled] .check,
-.material-switch.disabled .check {
-    pointer-events: none;
+.material-input-container input[disabled],
+.material-input-container input.disabled,
+.material-input-container textarea[disabled],
+.material-input-container textarea.disabled {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.26)!important;
 }
 
-.material-checkbox.disabled .check::before,
-.material-checkbox[disabled] .check::before,
-.material-radio.disabled .check::before,
-.material-radio[disabled] .check::before{
+.material-checkbox input.disabled~.check::before,
+.material-checkbox input[disabled]~.check::before,
+.material-radio input.disabled~.check::before,
+.material-radio input[disabled]~.check::before{
     border: 2px solid rgba(0, 0, 0, 0.26)!important;
 }
 
-.material-switch.disabled .check::after,
-.material-switch[disabled] .check::after { 
+.material-switch input.disabled~.check::after,
+.material-switch input[disabled]~.check::after { 
     background-color: #ccc;
 }
 
 .material-range[disabled]::-webkit-slider-thumb,
 .material-range.disabled::-webkit-slider-thumb {
-      -webkit-box-shadow: none!important;
-              box-shadow: none!important;
-      -webkit-transform: scale(1)!important; 
-              transform: scale(1)!important;
+    -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+    -webkit-transform: scale(1)!important; 
+            transform: scale(1)!important;
+    background-color: #ccc!important;
 }
     
 .material-range[disabled]::-moz-range-thumb,
 .material-range.disabled::-moz-range-thumb {
-      box-shadow: none!important;
-      transform: scale(1)!important;
+    box-shadow: none!important;
+    transform: scale(1)!important;
+    background-color: #ccc!important;
 }
 
 .material-range[disabled]::-ms-thumb,
 .material-range.disabled::-ms-thumb {
-      box-shadow: none!important;
-      -ms-transform: scale(1)!important; 
-          transform: scale(1)!important;
+    box-shadow: none!important;
+    -ms-transform: scale(1)!important; 
+        transform: scale(1)!important;
+    background-color: #ccc!important;
+}
+
+.material-range-container input[disabled]~.material-range-background,
+.material-range-container input.disabled~.material-range-background {
+    background-color: rgba(102, 102, 102, .26)!important;
+}
+
+.material-range-container input[disabled]~* .material-range-progressbar,
+.material-range-container input.disabled~* .material-range-progressbar {
+    background-color: #ccc!important;
 }
