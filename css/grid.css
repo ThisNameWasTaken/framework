@@ -21,7 +21,7 @@
     display: -moz-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    padding: 8px;
+    padding: 0px 8px;
 }
 
 .row .col.sm-1 {
