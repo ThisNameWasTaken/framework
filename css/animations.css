@@ -1,4 +1,4 @@
-[class*=animation-] {
+.animation {
     -webkit-animation-duration: .5s;
     animation-duration: .5s;
     -webkit-animation-timing-function: ease-out;
@@ -7,14 +7,14 @@
     animation-fill-mode: both
 }
 
-.animation-reverse {
+.animation.reverse {
     -webkit-animation-direction: reverse;
     animation-direction: reverse;
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in
 }
 
-.animation-fade {
+.animation.fade {
     -webkit-animation-name: fade;
     animation-name: fade;
     -webkit-animation-duration: .8s;
@@ -23,94 +23,94 @@
     animation-timing-function: linear
 }
 
-.animation-scale-up {
+.animation.scale-up {
     -webkit-animation-name: fade-scale-02;
     animation-name: fade-scale-02
 }
 
-.animation-scale-down {
+.animation.scale-down {
     -webkit-animation-name: fade-scale-18;
     animation-name: fade-scale-18
 }
 
-.animation-slide-top {
+.animation.slide-top {
     -webkit-animation-name: fade-top;
     animation-name: fade-top
 }
 
-.animation-slide-bottom {
+.animation.slide-bottom {
     -webkit-animation-name: fade-bottom;
     animation-name: fade-bottom
 }
 
-.animation-slide-left {
+.animation.slide-left {
     -webkit-animation-name: fade-left;
     animation-name: fade-left
 }
 
-.animation-slide-right {
+.animation.slide-right {
     -webkit-animation-name: fade-right;
     animation-name: fade-right
 }
 
-.animation-slide-top-small {
+.animation.slide-top-small {
     -webkit-animation-name: fade-top-small;
     animation-name: fade-top-small
 }
 
-.animation-slide-bottom-small {
+.animation.slide-bottom-small {
     -webkit-animation-name: fade-bottom-small;
     animation-name: fade-bottom-small
 }
 
-.animation-slide-left-small {
+.animation.slide-left-small {
     -webkit-animation-name: fade-left-small;
     animation-name: fade-left-small
 }
 
-.animation-slide-right-small {
+.animation.slide-right-small {
     -webkit-animation-name: fade-right-small;
     animation-name: fade-right-small
 }
 
-.animation-slide-top-medium {
+.animation.slide-top-medium {
     -webkit-animation-name: fade-top-medium;
     animation-name: fade-top-medium
 }
 
-.animation-slide-bottom-medium {
+.animation.slide-bottom-medium {
     -webkit-animation-name: fade-bottom-medium;
     animation-name: fade-bottom-medium
 }
 
-.animation-slide-left-medium {
+.animation.slide-left-medium {
     -webkit-animation-name: fade-left-medium;
     animation-name: fade-left-medium
 }
 
-.animation-slide-right-medium {
+.animation.slide-right-medium {
     -webkit-animation-name: fade-right-medium;
     animation-name: fade-right-medium
 }
 
-.animation-kenburns {
+.animation.kenburns {
     -webkit-animation-name: scale-kenburns;
     animation-name: scale-kenburns;
     -webkit-animation-duration: 15s;
     animation-duration: 15s
 }
 
-.animation-shake {
+.animation.shake {
     -webkit-animation-name: shake;
     animation-name: shake
 }
 
-.animation-fast {
+.animation.fast {
     -webkit-animation-duration: .1s;
     animation-duration: .1s
 }
 
-.animation-toggle:not(:hover):not(.hover) [class*=animation-] {
+.animation.toggle:not(:hover):not(.hover) .animation {
     -webkit-animation-name: none;
     animation-name: none
 }

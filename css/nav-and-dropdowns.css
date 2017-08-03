@@ -177,13 +177,13 @@
 }
 
 .sidenav {
+    position: absolute;
+    top: 0;
     height: 100%;
     width: 200px;
     background-color: #fff;
-    position: fixed!important;
     z-index: 1001;
     overflow: auto;
-    top: 0;
 }
 
 .sidenav.left {
