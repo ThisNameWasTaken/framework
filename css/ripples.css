@@ -40,8 +40,8 @@
     z-index: 9;
     position: absolute;
     -webkit-transition: all 0s;
-    -o-transition: all 0s;
-    transition: all 0s;
+         -o-transition: all 0s;
+            transition: all 0s;
 }
 
 .ripple.black {
@@ -62,17 +62,17 @@
 .ripple-effect.is-visible .ripple {
     opacity: .3;
     -webkit-transition: opacity .18s ease-in, -webkit-transform .27s ease-in;
-    transition: opacity .18s ease-in, -webkit-transform .27s ease-in;
-    -o-transition: transform .27s ease-in, opacity .18s ease-in;
-    transition: transform .27s ease-in, opacity .18s ease-in;
-    transition: transform .27s ease-in, opacity .18s ease-in, -webkit-transform .27s ease-in;
+            transition: opacity .18s ease-in, -webkit-transform .27s ease-in;
+         -o-transition: transform .27s ease-in, opacity .18s ease-in;
+            transition: transform .27s ease-in, opacity .18s ease-in;
+            transition: transform .27s ease-in, opacity .18s ease-in, -webkit-transform .27s ease-in;
 }
 
 .ripple-effect.is-fading .ripple {
     opacity: 0;
     -webkit-transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
-    transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
-    -o-transition: transform .27s ease-in, opacity .3s ease-in;
-    transition: transform .27s ease-in, opacity .3s ease-in;
-    transition: transform .27s ease-in, opacity .3s ease-in, -webkit-transform .27s ease-in;
+            transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
+         -o-transition: transform .27s ease-in, opacity .3s ease-in;
+            transition: transform .27s ease-in, opacity .3s ease-in;
+            transition: transform .27s ease-in, opacity .3s ease-in, -webkit-transform .27s ease-in;
 }

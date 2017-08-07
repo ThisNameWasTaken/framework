@@ -36,9 +36,9 @@
 
 .dialog .actions {
      -webkit-box-pack: justify;
-     -webkit-justify-content: space-between;
         -moz-box-pack: justify;
          -ms-flex-pack: justify;
+     -webkit-justify-content: space-between;
              justify-content: space-between;
      -webkit-flex-wrap: wrap;
          -ms-flex-wrap: wrap;

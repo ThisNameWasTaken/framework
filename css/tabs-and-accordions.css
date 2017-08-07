@@ -25,15 +25,15 @@
     background-color: #000;
     width: 0;
     -webkit-transition: 0s ease;
-    -o-transition: 0s ease;
-    transition: 0s ease;
+         -o-transition: 0s ease;
+            transition: 0s ease;
 }
 
 .tab.is-active .tab-bar {
     width: 100%;
     -webkit-transition: .15s ease;
-    -o-transition: .15s ease;
-    transition: .15s ease;
+         -o-transition: .15s ease;
+            transition: .15s ease;
 }
 
 .tab-toggle,
