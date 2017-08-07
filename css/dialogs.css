@@ -10,20 +10,23 @@
 }
 
 .dialog {
-     padding: 16px;
-     border-radius: 2px;
-     background-color: #fff;
-     color: #000;
-     z-index: 1001;
-     -webkit-box-orient: vertical;
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+      -webkit-box-orient: vertical;
+         -moz-box-orient: vertical;
      -webkit-box-direction: normal;
-     -webkit-flex-direction: column;
-        -moz-box-orient: vertical;
         -moz-box-direction: normal;
-         -ms-flex-direction: column;
-             flex-direction: column;
-     margin: auto 8px;
-     overflow: hidden;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 16px;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #000;
+    z-index: 1001;
+    margin: auto 8px;
+    overflow: hidden;
 }
 
 .dialog .title {
@@ -42,19 +45,6 @@
              flex-wrap: wrap;
     margin-top: 16px;
     font-size: 16px;
-}
-
-/* For IE 10+ */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .dialog {
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%); 
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); 
-        max-width: 96%;
-    }
 }
 
  @media screen and (min-width: 48em) {
