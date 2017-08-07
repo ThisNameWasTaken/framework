@@ -7,33 +7,34 @@
         return;
 
     for (let i = 0; i < transitions.length; i++) {
+        let element = transitions[i];
         // check if it should do a radial transition
-        if (transitions[i].classList.contains('radial-transform'))
-            AddRadialTransform(transitions[i]);
+        if (element.classList.contains('radial-transform'))
+            AddRadialTransform(element);
 
         // add the idle state to every transition element
-        transitions[i].classList.add('is-idle');
+        element.classList.add('is-idle');
 
-        let trigger = document.getElementById(transitions[i].getAttribute('trigger'));
+        let trigger = document.getElementById(element.getAttribute('trigger'));
         if (trigger)
-            trigger.addEventListener('click', function () { transitions[i].classList.remove('is-idle'); });
+            trigger.addEventListener('click', function () { element.classList.remove('is-idle'); });
 
-        let idle = document.getElementById(transitions[i].getAttribute('idle'));
+        let idle = document.getElementById(element.getAttribute('idle'));
         if (idle)
-            idle.addEventListener('click', function () { setTimeout(function () { transitions[i].classList.add('is-idle'); }, 0); });
+            idle.addEventListener('click', function () { setTimeout(function () { element.classList.add('is-idle'); }, 0); });
 
-        let toggle = document.getElementById(transitions[i].getAttribute('toggle'));
+        let toggle = document.getElementById(element.getAttribute('toggle'));
         if (toggle)
-            toggle.addEventListener('click', function () { transitions[i].classList.toggle('is-idle'); });
+            toggle.addEventListener('click', function () { element.classList.toggle('is-idle'); });
 
         // Debug only
         if (!trigger && !toggle) {
-            console.warn(transitions[i]);
+            console.warn(element);
             console.warn('does not have a toggle or trigger');
         }
 
         if (!idle && !toggle) {
-            console.warn(transitions[i]);
+            console.warn(element);
             console.warn(' does not have a toggle or idle');
         }
         // END Debug
