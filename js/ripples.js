@@ -5,17 +5,29 @@
     for (let i = 0; i < elements.length; i++) {
         AttachRipple(elements[i]);
 
+        elements[i].addEventListener('mousedown', DisplayRipple);
+        elements[i].addEventListener('mouseup', FadeRipple);
+
         elements[i].addEventListener('touchstart', DisplayRipple);
         elements[i].addEventListener('touchend', FadeRipple);
     }
 
+    let ignoreMouse = false;
+
     function DisplayRipple() {
+        if (event.type === 'mousedown') {
+            if (ignoreMouse) {
+                ignoreMouse = false;
+                return;
+            }
+        } else if (event.type === 'touchstart') {
+            ignoreMouse = true;
+        }
+
         this.classList.remove('is-fading');
         SetRipplePos(event, this);
         let self = this;
-        setTimeout(function () {
-            self.classList.add('is-visible');
-        }, 0);
+        setTimeout(function () { self.classList.add('is-visible'); }, 0);
     }
 
     function FadeRipple() {
@@ -24,18 +36,24 @@
     }
 
     function AttachRipple(element) {
-        let ripple = document.createElement('div');
+        let rippleContainer = document.createElement('div');
+        rippleContainer.classList.add('ripple-container');
+
+        let ripple = document.createElement('span');
         ripple.classList.add('ripple');
-        ripple.classList.add('black');
 
         AddRippleShade(ripple, element);
 
         ripple.style.width = ripple.style.height = Math.max(element.clientHeight, element.clientWidth) + 'px';
 
-        element.appendChild(ripple);
+        rippleContainer.appendChild(ripple);
+        element.appendChild(rippleContainer);
     }
 
     function SetRipplePos(event, element) {
+        if (element.classList.contains('check'))
+            return;
+
         // get element offset
         let offset = element.getBoundingClientRect();
         // get click coords
@@ -51,6 +69,9 @@
     }
 
     function AddRippleShade(ripple, element) {
+        if (element.classList.contains('check'))
+            return;
+
         // we choose ripple's color based on element's background color
         let bgColor = window.getComputedStyle(element).backgroundColor;
         // get each color value

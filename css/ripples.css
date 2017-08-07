@@ -1,6 +1,34 @@
 .ripple-effect {
     position: relative;
+}
+
+.ripple-container {
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.check .ripple-container {
+    width: 175%;
+    height: 175%;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.check .ripple-container,
+.check .ripple-container .ripple {
+    left: 50%;
+    top: 50%;
+}
+
+.check .ripple-container .ripple {
+    background-color: #2196F3;
 }
 
 .ripple {
