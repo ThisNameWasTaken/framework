@@ -92,7 +92,8 @@ figure {
 
 hr {
     -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     /* 1 */
     height: 0;
     /* 1 */
@@ -141,7 +142,9 @@ abbr[title] {
     /* 1 */
     text-decoration: underline;
     /* 2 */
-    text-decoration: underline dotted;
+    -webkit-text-decoration: underline dotted;
+       -moz-text-decoration: underline dotted;
+            text-decoration: underline dotted;
     /* 2 */
 }
 
@@ -383,7 +386,8 @@ fieldset {
 
 legend {
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* 1 */
     color: inherit;
     /* 2 */
@@ -428,7 +432,8 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 2 */
