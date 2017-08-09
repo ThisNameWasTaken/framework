@@ -1,18 +1,19 @@
 .material-input-container {
     position: relative;
-    margin: 24px 0px;
-    background-color: currentColor;
+    margin-bottom: 8px; 
+    margin-top: 16px;  
+    background-color: transparent;
 }
 
 .material-input {
-    margin: auto;
-    padding: 10px 16px;
+    padding: 8px 0px;
     display: block;
     width: 100%;
     border: none;
     border-bottom: 3px solid rgba(0, 0, 0, .26);
-    background-color: #f0f0f0;
     outline: none;
+    background-color: transparent;
+    caret-color: #2196F3;
 }
 
 textarea.material-input {
@@ -28,10 +29,11 @@ textarea.material-input.is-upgraded {
 textarea.material-input,
 .mirrored-textarea {
     min-height: 100px;
-    padding: 16px;
+    padding: 8px 0px;
     width: 100%;
     display: block;
     font-size: 16px;
+    line-height: 16px;
     word-break: break-all!important;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
@@ -43,32 +45,38 @@ textarea.material-input,
 .mirrored-textarea {
     position: absolute;
     top: 0;
-    pointer-events: none;
+    pointer-events: none!important;
     z-index: -99;
     opacity: 0;
 }
 
 .material-label {
-    margin: auto;
     color: rgba(0, 0, 0, .55);
     font-size: 16px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
-    left: 16px;
-    top: 10px;
+    left: 0px;
+    top: 8px;
 }
 
+.material-input-container .helper-text {
+    color: rgba(0, 0, 0, .55);
+    font-size: 12px;
+    padding-top: 8px;
+    display: inline-block;
+}
 
 /* active state */
 .material-input:focus~.material-label,
 .material-input.active~.material-label {
-    top: -18px;
-    left: 4px;
+    top: -8px;
     font-size: 14px;
-    color: inherit;
 }
 
+.material-input:focus~.material-label {
+    color: #2196F3;
+}
 
 /* bottom bar */
 .material-bar {
@@ -76,7 +84,7 @@ textarea.material-input,
     display: block;
     width: 100%;
     margin: auto;
-    background-color: inherit;
+    background-color: #2196F3;
 }
 
 .material-bar::before,
@@ -86,7 +94,7 @@ textarea.material-input,
     width: 0;
     bottom: 0px;
     position: absolute;
-    background-color: inherit;
+    background-color: #2196F3;
 }
 
 .material-bar::before {
@@ -124,6 +132,7 @@ textarea.material-input,
 .material-checkbox,
 .material-radio,
 .material-switch {
+    margin: 3px 2px;
     position: relative;
     z-index: 1;
     display: -webkit-inline-box;
@@ -154,8 +163,8 @@ textarea.material-input,
 .material-switch .check::after {
     width: 16px;
     height: 16px;
-    line-height: 16px;
     font-size: 16px;
+    line-height: 16px;
     display: inline-block;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -288,10 +297,10 @@ textarea.material-input,
     border: none;
     cursor: pointer;
     z-index: 1;
-    -webkit-align-self: center;
-   -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-            align-self: center;
+    -ms-flex-item-align: center;
+     -webkit-align-self: center;
+     -ms-grid-row-align: center;
+             align-self: center;
 }
 
 .material-range::-moz-focus-outer {

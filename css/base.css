@@ -38,23 +38,11 @@
             font-feature-settings: 'liga';
  }
 
- *,
- *::before,
- *::after {
+ *:not(.fa):not(.material-icons),
+ *:not(.fa):not(.material-icons)::before,
+ *:not(.fa):not(.material-icons)::after {
      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
  }
-
-.material-icons,
-.material-icons::before,
-.material-icons::after {
-    font-family: "Material Icons"!important;
-}
-
-.fa,
-.fa::before,
-.fa::after {
-    font-family: FontAwesome!important;
-}
 
 ::-moz-selection {
     background: #b3d4fc;

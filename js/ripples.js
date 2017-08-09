@@ -4,6 +4,8 @@
     // get all the elements with a 'ripple-effect'
     let elements = document.getElementsByClassName('ripple-effect');
 
+    let ignoreMouseDown = false, ignoreMouseUp = false;
+
     for (let i = 0; i < elements.length; i++) {
         SetupRippleEffect(elements[i]);
 
@@ -14,8 +16,6 @@
         elements[i].addEventListener('touchstart', DisplayRipple);
         elements[i].addEventListener('touchend', FadeRipple);
     }
-
-    let ignoreMouseDown = ignoreMouseUp = false;
 
     function DisplayRipple() {
 
