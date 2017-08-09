@@ -173,6 +173,14 @@
     background-color: #fff;
 }
 
+.dropdown-content.right {
+    right: 0;
+}
+
+.dropdown-content.top {
+    bottom: 100%;
+}
+
 .dropdown-content .dropdown-item,
 .sidenav .nav-item {
     display: block;
