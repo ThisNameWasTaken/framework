@@ -1,96 +1,99 @@
+(function () {
+    'use strict';
 
-// get all the elements with a 'ripple-effect'
-let elements = document.getElementsByClassName('ripple-effect');
+    // get all the elements with a 'ripple-effect'
+    let elements = document.getElementsByClassName('ripple-effect');
 
-for (let i = 0; i < elements.length; i++) {
-    SetupRippleEffect(elements[i]);
+    for (let i = 0; i < elements.length; i++) {
+        SetupRippleEffect(elements[i]);
 
-    elements[i].addEventListener('mousedown', DisplayRipple);
-    elements[i].addEventListener('mouseup', FadeRipple);
-    elements[i].addEventListener('mouseleave', FadeRipple);
+        elements[i].addEventListener('mousedown', DisplayRipple);
+        elements[i].addEventListener('mouseup', FadeRipple);
+        elements[i].addEventListener('mouseleave', FadeRipple);
 
-    elements[i].addEventListener('touchstart', DisplayRipple);
-    elements[i].addEventListener('touchend', FadeRipple);
-}
-
-let ignoreMouseDown = ignoreMouseUp = false;
-
-function DisplayRipple() {
-
-    if (event.type === 'mousedown') {
-        if (ignoreMouseDown) {
-            ignoreMouseDown = false;
-            return;
-        }
-    } else if (event.type === 'touchstart') {
-        ignoreMouseDown = ignoreMouseUp = true;
+        elements[i].addEventListener('touchstart', DisplayRipple);
+        elements[i].addEventListener('touchend', FadeRipple);
     }
 
-    let rippleContainer = this.getElementsByClassName('ripple-container')[0];
-    let ripple = rippleContainer.lastElementChild;
-    ripple.classList.add('is-visible');
+    let ignoreMouseDown = ignoreMouseUp = false;
 
-    // Display the ripple 
-    SetRipplePos(event, this);
-}
+    function DisplayRipple() {
 
-function FadeRipple() {
-    if (event.type === 'mouseup')
-        if (ignoreMouseUp) {
-            ignoreMouseUp = false;
-            return;
+        if (event.type === 'mousedown') {
+            if (ignoreMouseDown) {
+                ignoreMouseDown = false;
+                return;
+            }
+        } else if (event.type === 'touchstart') {
+            ignoreMouseDown = ignoreMouseUp = true;
         }
 
-    let rippleContainer = this.getElementsByClassName('ripple-container')[0];
-    let ripple = rippleContainer.lastElementChild;
+        let rippleContainer = this.getElementsByClassName('ripple-container')[0];
+        let ripple = rippleContainer.lastElementChild;
+        ripple.classList.add('is-visible');
 
-    if (!ripple.classList.contains('is-visible'))
-        return;
+        // Display the ripple 
+        SetRipplePos(event, this);
+    }
 
-    ripple.classList.remove('is-visible');
-    // Fade the ripple 
-    ripple.classList.add('is-fading');
+    function FadeRipple() {
+        if (event.type === 'mouseup')
+            if (ignoreMouseUp) {
+                ignoreMouseUp = false;
+                return;
+            }
 
-    setTimeout(function () { rippleContainer.removeChild(ripple); }, 600);
+        let rippleContainer = this.getElementsByClassName('ripple-container')[0];
+        let ripple = rippleContainer.lastElementChild;
 
-    // Create a new ripple
-    AddRippleToElement(this);
-}
+        if (!ripple.classList.contains('is-visible'))
+            return;
 
-function SetupRippleEffect(element) {
-    let rippleContainer = document.createElement('div');
-    rippleContainer.classList.add('ripple-container');
+        ripple.classList.remove('is-visible');
+        // Fade the ripple 
+        ripple.classList.add('is-fading');
 
-    element.appendChild(rippleContainer);
+        setTimeout(function () { rippleContainer.removeChild(ripple); }, 600);
 
-    AddRippleToElement(element);
-}
+        // Create a new ripple
+        AddRippleToElement(this);
+    }
 
-function AddRippleToElement(element) {
-    let ripple = document.createElement('span');
-    ripple.classList.add('ripple');
+    function SetupRippleEffect(element) {
+        let rippleContainer = document.createElement('div');
+        rippleContainer.classList.add('ripple-container');
 
-    ripple.style.width = ripple.style.height = Math.max(element.clientHeight, element.clientWidth) + 'px';
+        element.appendChild(rippleContainer);
 
-    let rippleContainer = element.getElementsByClassName('ripple-container')[0];
-    rippleContainer.appendChild(ripple);
-}
+        AddRippleToElement(element);
+    }
 
-function SetRipplePos(event, element) {
-    if (element.classList.contains('check'))
-        return;
+    function AddRippleToElement(element) {
+        let ripple = document.createElement('span');
+        ripple.classList.add('ripple');
 
-    // get element offset
-    let offset = element.getBoundingClientRect();
-    // get click coords
-    let x = event.clientX !== undefined ? event.clientX : event.touches[0].clientX;
-    let y = event.clientY !== undefined ? event.clientY : event.touches[0].clientY;
+        ripple.style.width = ripple.style.height = Math.max(element.clientHeight, element.clientWidth) + 'px';
 
-    x = (x - offset.left) + 'px';
-    y = (y - offset.top) + 'px';
+        let rippleContainer = element.getElementsByClassName('ripple-container')[0];
+        rippleContainer.appendChild(ripple);
+    }
 
-    let rippleContainer = element.getElementsByClassName('ripple-container')[0];
-    let ripple = rippleContainer.lastElementChild;
-    ripple.style.top = y;
-    ripple.style.left = x;
-}
+    function SetRipplePos(event, element) {
+        if (element.classList.contains('check'))
+            return;
+
+        // get element offset
+        let offset = element.getBoundingClientRect();
+        // get click coords
+        let x = event.clientX !== undefined ? event.clientX : event.touches[0].clientX;
+        let y = event.clientY !== undefined ? event.clientY : event.touches[0].clientY;
+
+        x = (x - offset.left) + 'px';
+        y = (y - offset.top) + 'px';
+
+        let rippleContainer = element.getElementsByClassName('ripple-container')[0];
+        let ripple = rippleContainer.lastElementChild;
+        ripple.style.top = y;
+        ripple.style.left = x;
+    }
+})();
