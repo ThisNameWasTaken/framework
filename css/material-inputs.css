@@ -43,6 +43,7 @@ textarea.material-input,
 }
 
 .mirrored-textarea {
+    padding: 16px 0px;
     position: absolute;
     top: 0;
     pointer-events: none!important;
@@ -70,7 +71,7 @@ textarea.material-input,
 /* active state */
 .material-input:focus~.material-label,
 .material-input.active~.material-label {
-    top: -8px;
+    top: -12px;
     font-size: 14px;
 }
 
