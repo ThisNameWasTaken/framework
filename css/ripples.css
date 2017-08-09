@@ -12,6 +12,11 @@
     z-index: 9;
 }
 
+.ripple-container,
+.ripple-container *{
+    pointer-events: none;
+}
+
 .check .ripple-container {
     width: 175%;
     height: 175%;
@@ -31,48 +36,69 @@
     background-color: #2196F3;
 }
 
+.material-switch .check .ripple-container {
+    left: 10px;
+    width: 35px;
+    height: 35px;
+    -webkit-transition: left 0s linear .3s;
+         -o-transition: left 0s linear .3s;
+            transition: left 0s linear .3s;
+}
+
+.material-switch input:checked~.check .ripple-container {
+    left: 26px;
+}
+
 .ripple {
     -webkit-transform: translate(-50%, -50%) scale(0);
         -ms-transform: translate(-50%, -50%) scale(0);
             transform: translate(-50%, -50%) scale(0);
-    opacity: 0.25;
-    border-radius: 50%;
-    z-index: 9;
-    position: absolute;
-    -webkit-transition: all 0s;
-         -o-transition: all 0s;
-            transition: all 0s;
-}
-
-.ripple.black {
-    background-color: #000!important;
-}
-
-.ripple.white {
-    background-color: #fff!important;
-}
-
-.ripple-effect.is-visible .ripple,
-.ripple-effect.is-fading .ripple {
-    -webkit-transform: translate(-50%, -50%) scale(2.9);
-        -ms-transform: translate(-50%, -50%) scale(2.9);
-            transform: translate(-50%, -50%) scale(2.9);
-}
-
-.ripple-effect.is-visible .ripple {
-    opacity: .3;
-    -webkit-transition: opacity .18s ease-in, -webkit-transform .27s ease-in;
-            transition: opacity .18s ease-in, -webkit-transform .27s ease-in;
-         -o-transition: transform .27s ease-in, opacity .18s ease-in;
-            transition: transform .27s ease-in, opacity .18s ease-in;
-            transition: transform .27s ease-in, opacity .18s ease-in, -webkit-transform .27s ease-in;
-}
-
-.ripple-effect.is-fading .ripple {
-    opacity: 0;
     -webkit-transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
             transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
          -o-transition: transform .27s ease-in, opacity .3s ease-in;
             transition: transform .27s ease-in, opacity .3s ease-in;
             transition: transform .27s ease-in, opacity .3s ease-in, -webkit-transform .27s ease-in;
+    opacity: .3;
+    border-radius: 50%;
+    z-index: 9;
+    position: absolute;
+}
+
+.ripple.is-visible,
+.ripple.is-fading {
+    -webkit-transform: translate(-50%, -50%) scale(2.9);
+        -ms-transform: translate(-50%, -50%) scale(2.9);
+            transform: translate(-50%, -50%) scale(2.9);
+}
+
+.ripple.is-fading {
+    opacity: 0;
+}
+
+.ripple {
+    background-color: #000;
+}
+
+.ripple-effect.has-white-ripple .ripple,
+.ripple-effect.primary .ripple,
+.ripple-effect.blue .ripple,
+.ripple-effect.brown .ripple,
+.ripple-effect.blue-gray .ripple,
+.ripple-effect.blue-grey .ripple,
+.ripple-effect.green .ripple,
+.ripple-effect.indigo .ripple,
+.ripple-effect.deep-orange .ripple,
+.ripple-effect.pink .ripple,
+.ripple-effect.purple .ripple,
+.ripple-effect.deep-purple .ripple,
+.ripple-effect.red .ripple,
+.ripple-effect.teal .ripple,
+.ripple-effect.dark-gray .ripple,
+.ripple-effect.dark-grey .ripple {
+    background-color: #fff;
+}
+
+[disabled] .ripple,
+.disabled .ripple {
+    background-color: transparent!important;
 }
