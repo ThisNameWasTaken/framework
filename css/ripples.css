@@ -59,6 +59,7 @@
             transition: transform .27s ease-in, opacity .3s ease-in;
             transition: transform .27s ease-in, opacity .3s ease-in, -webkit-transform .27s ease-in;
     opacity: .3;
+    background-color: #000;
     border-radius: 50%;
     z-index: 9;
     position: absolute;
@@ -75,19 +76,23 @@
     opacity: 0;
 }
 
-.ripple,
-.has-black-ripple .ripple,
-.button:not(.raised) .ripple {
-    background-color: #000;
-}
-
-.has-white-ripple .ripple{
+.ripple-effect.has-white-ripple .ripple,
+.ripple-effect.primary .ripple,
+.ripple-effect.blue .ripple,
+.ripple-effect.brown .ripple,
+.ripple-effect.blue-gray .ripple,
+.ripple-effect.blue-grey .ripple,
+.ripple-effect.green .ripple,
+.ripple-effect.indigo .ripple,
+.ripple-effect.deep-orange .ripple,
+.ripple-effect.pink .ripple,
+.ripple-effect.purple .ripple,
+.ripple-effect.deep-purple .ripple,
+.ripple-effect.red .ripple,
+.ripple-effect.teal .ripple,
+.ripple-effect.dark-gray .ripple,
+.ripple-effect.dark-grey .ripple {
     background-color: #fff;
-}
-
-.ripple {
-    color: inherit;
-    background-color: currentColor;
 }
 
 [disabled] .ripple,
