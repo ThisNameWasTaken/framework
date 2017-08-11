@@ -8,41 +8,44 @@
 
     for (let i = 0; i < transitions.length; i++) {
         let element = transitions[i];
-        // check if it should do a radial transition
-        if (element.classList.contains('radial-transform'))
-            AddRadialTransform(element);
 
-        // add the idle state to every transition element
-        element.classList.add('is-idle');
+        // add the stopped state to every transition element
+        element.classList.add('is-stopped');
 
-        let trigger = document.getElementById(element.getAttribute('trigger'));
-        if (trigger)
-            trigger.addEventListener('click', function () { element.classList.remove('is-idle'); });
-
-        let idle = document.getElementById(element.getAttribute('idle'));
-        if (idle)
-            idle.addEventListener('click', function () { setTimeout(function () { element.classList.add('is-idle'); }, 0); });
-
-        let toggle = document.getElementById(element.getAttribute('toggle'));
-        if (toggle)
-            toggle.addEventListener('click', function () { element.classList.toggle('is-idle'); });
-
-        // Debug only
-        if (!trigger && !toggle) {
-            console.warn(element);
-            console.warn('does not have a toggle or trigger');
+        let triggers = element.getAttribute('trigger');
+        if (triggers) {
+            triggers = triggers.split(' ');
+            for (let i = 0; i < triggers.length; i++) {
+                let trigger = document.getElementById(triggers[i]);
+                if (trigger)
+                    trigger.addEventListener('click', function () { element.classList.remove('is-stopped'); });
+                else
+                    console.warn('wrong trigger id ' + trigger[i]);
+            }
         }
 
-        if (!idle && !toggle) {
-            console.warn(element);
-            console.warn(' does not have a toggle or idle');
+        let stops = element.getAttribute('idle')
+        if (stops) {
+            stops = stops.split(' ');
+            for (let i = 0; i < stops.length; i++) {
+                let stop = document.getElementById(stops[i]);
+                if (stop)
+                    stop.addEventListener('click', function () { setTimeout(function () { element.classList.add('is-stopped'); }, 0); });
+                else
+                    console.warn('wrong stop id ' + stops[i]);
+            }
         }
-        // END Debug
-    }
 
-    function AddRadialTransform(element) {
-        let parentRect = element.parentElement.getBoundingClientRect();
-        let max = Math.max(parentRect.width, parentRect.height);
-        element.style.width = element.style.height = (max * 1.5 + 'px');
+        let toggles = element.getAttribute('toggle');
+        if (toggles) {
+            toggles = toggles.split(' ');
+            for (let i = 0; i < toggles.length; i++) {
+                let toggle = document.getElementById(toggles[i]);
+                if (toggle)
+                    toggle.addEventListener('click', function () { element.classList.toggle('is-stopped'); });
+                else
+                    console.warn('wrong toggle id ' + toggle[i]);
+            }
+        }
     }
 })();
