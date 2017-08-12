@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/overlays.css">
     <link rel="stylesheet" href="css/nav-and-dropdowns.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/shadows.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/colors.css">
@@ -22,9 +23,11 @@
     <link rel="stylesheet" href="css/dialogs.css">
     <link rel="stylesheet" href="css/material-inputs.css">
     <link rel="stylesheet" href="css/tabs-and-accordions.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="css/ripples.css">
 
     <!-- fonts -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
     <!-- icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -34,17 +37,17 @@
 <body class="light-gray">
     <nav class="nav top dark-gray shadow-6">
         <div class="nav-left">
-            <a href="" class="nav-item h3">Kewl Brand</a>
+            <a href="" class="nav-item nav-brand">Kewl Brand</a>
         </div>
 
         <div class="nav-center">
             <a href="" class="nav-item"><i class="fa fa-twitter"></i></a>
             <a href="" class="nav-item"><i class="fa fa-facebook"></i></a>
-            <label class="nav-item opens-overlay dark-gray hide-xl hide-lg hide-md" for="side-nav-toggle"><i class="material-icons">menu</i></label>
+            <label class="nav-item opens-overlay dark-gray hide-xl hide-lg hide-md" id="menu-btn" for="side-nav-toggle"><i class="material-icons">menu</i></label>
         </div>
 
         <div class="nav-right hide-sm">
-            <a href="#" class="nav-item">Home</a>
+            <a href="#scroll-to-me" class="nav-item">Home</a>
             <a href="#" class="nav-item">About Us</a>
             <a href="#" class="nav-item">Contact</a>
         </div>
@@ -52,11 +55,11 @@
 
     <input type="checkbox" class="overlay-toggle" id="side-nav-toggle">
     <div class="overlay">
-        <label class="overlay-bg closes-overlay" for="side-nav-toggle"></label>
-        <div class="sidenav right">
-            <a href="#" class="nav-item">Home</a>
-            <a href="#" class="nav-item">About Us</a>
-            <a href="#" class="nav-item">Contact</a>
+        <label class="overlay-bg closes-overlay" id="sidenav-bg" for="side-nav-toggle"></label>
+        <div class="sidenav right transition slide-right" trigger="menu-btn" idle="sidenav-bg">
+            <a href="#" class="nav-item ripple-effect">Home</a>
+            <a href="#" class="nav-item ripple-effect">About Us</a>
+            <a href="#" class="nav-item ripple-effect">Contact</a>
         </div>
     </div>
 
@@ -91,7 +94,7 @@
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px;">
+        <div class="container hero">
             <div class="panel blue shadow-3">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio voluptates quaerat, exercitationem quod repudiandae
@@ -106,17 +109,19 @@
             </div>
 
             <div class="panel">
-                <a class="button raised blue">some text</a>
-                <a class="button raised blue round">some text</a>
-                <a class="button blue fab"><i class="material-icons">add</i></a>
-                <a class="button blue mini-fab"><i class="material-icons">keyboard_arrow_up</i></a>
+                <div class="button ripple-effect raised orange"></div>
+                <a class="button ripple-effect raised blue">some text</a>
+                <a class="button ripple-effect raised blue round">some text</a>
+                <a class="button ripple-effect blue fab"><i class="material-icons">add</i></a>
+                <a class="button ripple-effect blue fab"></a>
+                <a class="button ripple-effect blue mini-fab"><i class="material-icons">keyboard_arrow_up</i></a>
             </div>
 
             <div class="panel">
-                <a disabled class="button raised blue">some text</a>
-                <a disabled class="button raised blue round">some text</a>
-                <a disabled class="button blue fab"><i class="material-icons">add</i></a>
-                <a disabled class="button blue mini-fab"><i class="material-icons">keyboard_arrow_up</i></a>
+                <a disabled class="button ripple-effect raised blue">some text</a>
+                <a disabled class="button ripple-effect raised blue round">some text</a>
+                <a disabled class="button ripple-effect blue fab"><i class="material-icons">add</i></a>
+                <a disabled class="button ripple-effect blue mini-fab"><i class="material-icons">keyboard_arrow_up</i></a>
             </div>
         </div>
     </div>
@@ -134,15 +139,15 @@
                         Eius, quidem.</p>
                 </div>
                 <div class="actions">
-                    <div class="button text-blue">Lorem ipsum</div>
+                    <div class="button ripple-effect text-blue">Lorem ipsum</div>
                 </div>
                 <div class="menu">
-                    <div class="button button-icon"><i class="material-icons text-light-gray">share</i></div>
+                    <div class="button button-icon ripple-effect has-white-ripple"><i class="material-icons text-light-gray">share</i></div>
                 </div>
             </div>
         </div>
         <div class="col md-6 lg-3">
-            <div class="card shadow-3">
+            <div class="card shadow-3" id="scroll-to-me">
                 <div class="media hoverable">
                     <img src="images/arlberg-pass-833326_960_720.jpg" alt="" class="fluid">
                     <div class="title">Lorem ipsum dolor sit amet, consectetur.</div>
@@ -154,10 +159,10 @@
                     </p>
                 </div>
                 <div class="actions">
-                    <div class="button text-blue">Lorem ipsum</div>
+                    <div class="button text-blue ripple-effect">Lorem ipsum</div>
                 </div>
                 <div class="menu">
-                    <div class="button button-icon"><i class="material-icons text-light-gray">share</i></div>
+                    <div class="button button-icon ripple-effect has-white-ripple"><i class="material-icons text-light-gray">share</i></div>
                 </div>
             </div>
         </div>
@@ -172,11 +177,11 @@
                         cumque ipsum reiciendis in accusantium illum debitis voluptate delectus distinctio. Asperiores qui,
                         ea odit ullam.</p>
                 </div>
-                <div class="actions text-blue">
-                    <div class="button text-blue">Lorem ipsum</div>
+                <div class="actions">
+                    <div class="button text-blue ripple-effect">Lorem ipsum</div>
                 </div>
                 <div class="menu">
-                    <div class="button button-icon"><i class="material-icons text-light-gray">share</i></div>
+                    <div class="button button-icon ripple-effect has-white-ripple"><i class="material-icons text-light-gray">share</i></div>
                 </div>
             </div>
         </div>
@@ -192,19 +197,31 @@
                         et a accusamus accusantium!</p>
                 </div>
                 <div class="actions">
-                    <div class="button text-blue">Lorem ipsum</div>
+                    <div class="button text-blue ripple-effect">Lorem ipsum</div>
                 </div>
                 <div class="menu">
-                    <div class="button button-icon"><i class="material-icons text-light-gray">share</i></div>
+                    <div class="button button-icon ripple-effect has-white-ripple"><i class="material-icons text-light-gray">share</i></div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px;">
-            <div class="responsive round shadow-3">
-                <table class="table bordered hoverable">
+        <div class="container">
+            <div class="button primary raised ripple-effect" style="overflow: hidden; position: relative;">ripples</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="button raised ripple-effect">test btn</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container hero">
+            <div class="shadow-3">
+                <table class="table bordered hoverable round">
                     <tr class="blue">
                         <th>Lorem</th>
                         <th>Ipsum</th>
@@ -231,7 +248,19 @@
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px">
+        <div class="container hero">
+            <ul class="list bordered hoverable striped shadow-2 round text-center">
+                <li>Lorem.</li>
+                <li>Veritatis!</li>
+                <li>Illo?</li>
+                <li>Quasi.</li>
+                <li>Minima!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container hero">
             <p>
                 <span class="tooltip-container" style="font-size: 16px;">Hover over me<span class="tooltip">additional info</span></span>
                 lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure provident illum distinctio quaerat fugiat, laudantium sapiente
@@ -241,7 +270,7 @@
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px">
+        <div class="container hero">
             <p>
                 <span class="tooltip-container" style="font-size: 16px;">Hover over me<span class="tooltip">additional info</span></span>
                 lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure provident illum distinctio quaerat fugiat, laudantium sapiente
@@ -251,7 +280,7 @@
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px">
+        <div class="container hero fluid">
             <p>
                 <span class="tooltip-container" style="font-size: 16px;">Hover over me<span class="tooltip">additional info</span></span>
                 lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure provident illum distinctio quaerat fugiat, laudantium sapiente
@@ -271,20 +300,27 @@
         <div class="container margin-bottom">
             <div class="dropdown-hover">
                 <button class="button">Lorem ipsum</button>
-                <div class="dropdown-content shadow-3">
+                <ul class="dropdown-content shadow-3">
                     <li class="dropdown-item">Lorem </li>
                     <li class="dropdown-item border-bottom">Lorem </li>
                     <li class="dropdown-item">Lorem </li>
-                </div>
+                </ul>
             </div>
 
-            <button class="button">Lorem ipsum dolor sit amet, consectetur</button>
+            <div class="dropdown-hover">
+                <button class="button">Lorem ipsum dolor sit amet, consectetur</button>
+                <ul class="dropdown-content right top shadow-3">
+                    <li class="dropdown-item">Lorem ipsum dolor sit amet.</li>
+                    <li class="dropdown-item">Neque, illum, amet. Mollitia, explicabo.</li>
+                    <li class="dropdown-item">Ipsam doloribus aliquam, nam optio.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="container">
-            <label class="button raised opens-overlay" for="dialog-overlay-toggle">open dialog</label>
+            <label class="button ripple-effect raised opens-overlay" for="dialog-overlay-toggle">open dialog</label>
         </div>
     </div>
 
@@ -303,26 +339,26 @@
 
     <div class="row margin-bottom">
         <div class="container">
-            <label class="button raised opens-overlay" for="no-script-dialog-check">open scirptless dialog</label>
+            <label class="button ripple-effect raised opens-overlay check-in-view" for="no-script-dialog-check">open scirptless dialog</label>
         </div>
     </div>
 
     <input type="checkbox" class="overlay-toggle" id="no-script-dialog-check">
     <div class="overlay">
-        <label class="overlay-bg closes-overlay" for="no-script-dialog-check"></label>
-        <div class="dialog shadow-24">
+        <label class="overlay-bg closes-overlay" id="bg-cls-dialog" for="no-script-dialog-check"></label>
+        <div class="dialog shadow-24 transition slide-bottom opacity" trigger="no-script-dialog-check" idle="cls-dialog bg-cls-dialog">
             <div class="title">Lorem ipsum dolor.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae porro, nulla repellendus.</p>
             <div class="actions">
-                <label class="button text-red closes-overlay" for="no-script-dialog-check">Close</label>
+                <label class="button text-red closes-overlay" for="no-script-dialog-check" id="cls-dialog">Close</label>
                 <button class="button text-blue">Proceed</button>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px;">
-            <label class="accordion button raised" for="accordion-toggle-1">accordion 1</label>
+        <div class="container hero">
+            <label class="accordion button ripple-effect raised" for="accordion-toggle-1">accordion 1</label>
             <input type="radio" class="accordion-toggle" id="accordion-toggle-1" name="accordions" checked>
             <div class="accordion-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, facilis, ipsa. Enim placeat vel iure dolore
@@ -336,7 +372,7 @@
                     fuga quod quidem quo veniam. Voluptas?</p>
             </div>
 
-            <label class="accordion button raised" for="accordion-toggle-2">accordion 2</label>
+            <label class="accordion button ripple-effect raised" for="accordion-toggle-2">accordion 2</label>
             <input type="radio" class="accordion-toggle" id="accordion-toggle-2" name="accordions">
             <div class="accordion-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, facilis, ipsa. Enim placeat vel iure dolore
@@ -350,7 +386,7 @@
                     fuga quod quidem quo veniam. Voluptas?</p>
             </div>
 
-            <label class="accordion button raised" for="accordion-toggle-3">accordion 3</label>
+            <label class="accordion button ripple-effect raised" for="accordion-toggle-3">accordion 3</label>
             <input type="radio" class="accordion-toggle" id="accordion-toggle-3" name="accordions">
             <div class="accordion-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, facilis, ipsa. Enim placeat vel iure dolore
@@ -367,11 +403,11 @@
     </div>
 
     <div class="row">
-        <div class="container fluid" style="max-width: 900px;">
+        <div class="container hero">
             <div class="tab-group">
-                <label for="tab-1-toggle" class="tab">Lorem</label>
-                <label for="tab-2-toggle" class="tab">Deleniti</label>
-                <label for="tab-3-toggle" class="tab">Aliquid</label>
+                <label for="tab-1-toggle" class="tab ripple-effect">Lorem</label>
+                <label for="tab-2-toggle" class="tab ripple-effect">Deleniti</label>
+                <label for="tab-3-toggle" class="tab ripple-effect">Aliquid</label>
             </div>
 
             <input type="radio" name="tabs" class="tab-toggle" id="tab-1-toggle" checked>
@@ -408,11 +444,11 @@
     </div>
 
     <div class="row">
-        <div class="container" style="width: 100%; max-width: 900px;">
+        <div class="container hero">
             <div class="tab-group">
-                <label for="tab-4-toggle" class="tab">Lorem</label>
-                <label for="tab-5-toggle" class="tab">Deleniti</label>
-                <label for="tab-6-toggle" class="tab">Aliquid</label>
+                <label for="tab-4-toggle" class="tab ripple-effect">Lorem</label>
+                <label for="tab-5-toggle" class="tab ripple-effect">Deleniti</label>
+                <label for="tab-6-toggle" class="tab ripple-effect">Aliquid</label>
             </div>
 
             <input type="radio" name="tabs-2" class="tab-toggle" id="tab-4-toggle">
@@ -450,14 +486,15 @@
 
 
     <div class="row">
-        <div class="container margin-bottom" style="width: 100%; max-width: 900px">
+        <div class="container hero margin-bottom">
             <form>
-                <div class="material-input-container text-blue">
-                    <input class="material-input" type="text" name="username" placeholder="Username">
+                <div class="material-input-container">
+                    <input class="material-input" type="text" name="username" placeholder="Username" required>
                     <span class="material-bar"></span>
+                    <span class="helper-text">This textfield is required!</span>
                 </div>
 
-                <div class="material-input-container text-blue">
+                <div class="material-input-container">
                     <textarea class="material-input auto-resize" placeholder="Type in here"></textarea>
                     <span class="material-bar"></span>
                 </div>
@@ -467,7 +504,7 @@
 
             <label class="material-checkbox" for="checkbox-1">
                 <input type="checkbox" id="checkbox-1">
-                <span class="check text-light-gray"></span>
+                <span class="check text-light-gray ripple-effect"></span>
                 <span class="text">Checkbox</span>
             </label>
 
@@ -475,19 +512,19 @@
 
             <label class="material-radio" for="radio-2">
                 <input type="radio" id="radio-2" name="radios">
-                <span class="check"></span>
+                <span class="check ripple-effect"></span>
                 <span class="text">Radio</span>
             </label>
 
             <label class="material-radio" for="radio-1">
                 <input type="radio" id="radio-1" name="radios">
-                <span class="check"></span>
+                <span class="check ripple-effect"></span>
                 <span class="text">Radio</span>
             </label>
 
             <label class="material-radio" for="radio-3">
                 <input type="radio" id="radio-3" name="radios">
-                <span class="check"></span>
+                <span class="check ripple-effect"></span>
                 <span class="text">Radio</span>
             </label>
 
@@ -495,14 +532,14 @@
 
             <label class="material-switch" for="switch-1">
                 <input type="checkbox" id="switch-1">
-                <span class="check"></span>
+                <span class="check ripple-effect"></span>
                 <span class="text">Switch</span>
             </label>
 
             <br>
 
             <div class="material-range-container">
-                <input class="material-range" type="range" min="0" max="100" step="1" value="20">
+                <input class="material-range is-lowest-value" type="range" min="0" max="100" step="1" value="20">
                 <div class="material-range-background">
                     <div class="material-range-progressbar"></div>
                 </div>
@@ -511,14 +548,14 @@
     </div>
 
     <div class="row">
-        <div class="container margin-bottom" style="width: 100%; max-width: 900px">
+        <div class="container hero margin-bottom">
             <form>
-                <div class="material-input-container text-blue">
+                <div class="material-input-container">
                     <input class="material-input" type="text" name="username" placeholder="Username" disabled>
                     <span class="material-bar"></span>
                 </div>
 
-                <div class="material-input-container text-blue">
+                <div class="material-input-container">
                     <textarea class="material-input auto-resize" placeholder="Type in here" disabled></textarea>
                     <span class="material-bar"></span>
                 </div>
@@ -526,7 +563,7 @@
 
             <br>
 
-            <label class="material-checkbox" for="checkbox-11" disabled>
+            <label class="material-checkbox" for="checkbox-11">
                 <input type="checkbox" id="checkbox-11" disabled>
                 <span class="check text-light-gray"></span>
                 <span class="text">Checkbox</span>
@@ -534,19 +571,19 @@
 
             <br>
 
-            <label class="material-radio" for="radio-22" disabled>
+            <label class="material-radio" for="radio-22">
                 <input type="radio" id="radio-22" name="radios" disabled>
                 <span class="check"></span>
                 <span class="text">Radio</span>
             </label>
 
-            <label class="material-radio" for="radio-11" disabled>
+            <label class="material-radio" for="radio-11">
                 <input type="radio" id="radio-11" name="radios" disabled>
                 <span class="check"></span>
                 <span class="text">Radio</span>
             </label>
 
-            <label class="material-radio" for="radio-33" disabled>
+            <label class="material-radio" for="radio-33">
                 <input type="radio" id="radio-33" name="radios" disabled>
                 <span class="check"></span>
                 <span class="text">Radio</span>
@@ -554,7 +591,7 @@
 
             <br>
 
-            <label class="material-switch" for="switch-11" disabled>
+            <label class="material-switch" for="switch-11">
                 <input type="checkbox" id="switch-11" disabled>
                 <span class="check"></span>
                 <span class="text">Switch</span>
@@ -562,7 +599,7 @@
 
             <br>
 
-            <div class="material-range-container" disabled>
+            <div class="material-range-container">
                 <input class="material-range" type="range" min="0" max="100" step="1" value="20" disabled>
                 <div class="material-range-background">
                     <div class="material-range-progressbar"></div>
@@ -571,9 +608,51 @@
         </div>
     </div>
 
+    <div class="footer">
+        <div class="hero">
+            <div class="footer-left">
+                <ul class="list">
+                    <li class="title">Lorem.</li>
+                    <li>Sapiente!</li>
+                    <li>Assumenda!</li>
+                </ul>
+                <ul class="list">
+                    <li class="title">Lorem.</li>
+                    <li>Sapiente!</li>
+                    <li>Assumenda!</li>
+                </ul>
+            </div>
+
+            <div class="footer-center">
+                <div class="fa fa-facebook social-btn"></div>
+                <div class="fa fa-twitter social-btn"></div>
+                <div class="fa fa-github social-btn"></div>
+            </div>
+
+            <div class="footer-right">
+                <ul class="list">
+                    <li class="title">Lorem.</li>
+                    <li>Doloremque!</li>
+                    <li>Quae.</li>
+                    <li>Delectus.</li>
+                    <li>Sed?</li>
+                </ul>
+                <ul class="list">
+                    <li class="title">Lorem.</li>
+                    <li>Ab.</li>
+                    <li>Sed?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script src="js/material-inputs.js"></script>
     <script src="js/overlays.js"></script>
     <script src="js/tabs.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/ripples.js"></script>
+    <!-- <script src="js/check-in-view.js"></script> -->
+    <!-- <script src="js/benchmark.js"></script> -->
 </body>
 
 </html>
