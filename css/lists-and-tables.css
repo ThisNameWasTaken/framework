@@ -4,6 +4,7 @@
     border-spacing: 0;
     width: 100%;
     display: table;
+    overflow-x: hidden;
 }
 
 .table tr:first-child th:first-child,
@@ -21,20 +22,20 @@
 }
 
 .bordered tr,
-.table-all tr {
-    border-bottom: 1px solid #ddd;
+.table-all tr,
+.list.bordered li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.striped tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.table-all tr:nth-child(odd) {
-    background-color: #fff;
-}
-
+.striped tbody tr:nth-child(even), 
+.list.striped li:nth-child(even),
 .table-all tr:nth-child(even) {
     background-color: #f1f1f1;
+}
+
+.table-all tr:nth-child(odd),
+.list.striped li:nth-child(even) {
+    background-color: #fff;
 }
 
 .hoverable tbody tr::-moz-focus-inner,
@@ -44,7 +45,7 @@
 
 .hoverable tbody tr:hover,
 .list.hoverable li:hover {
-    background-color: rgba(158, 158, 158, 0.20);
+    background-color: rgba(158, 158, 158, 0.2);
 }
 
 .hoverable tbody tr:focus:not(:active),
@@ -54,12 +55,7 @@
 
 .hoverable tbody tr:active,
 .list.hoverable li:active {
-    background-color: rgba(158, 158, 158, 0.40);
-}
-
-.centered tr th,
-.centered tr td {
-    text-align: center;
+    background-color: rgba(158, 158, 158, 0.4);
 }
 
 .table td,
@@ -80,14 +76,17 @@
 }
 
 .list {
+    display: inline-block;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    overflow-x: hidden;
+}
+
+.list.inline-block-items li {
+    display: inline-block;
 }
 
 .list li {
     padding: 8px 16px;
-    border-bottom: 1px solid #ddd;
 }
 
 .list li:last-child {

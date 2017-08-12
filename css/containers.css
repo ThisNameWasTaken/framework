@@ -1,6 +1,7 @@
 .container,
 .panel,
-.card {
+.card,
+.hero {
     position: relative;
     margin: auto;
     display: block;
@@ -8,6 +9,11 @@
 
 .container {
     padding: 0.01em 16px;
+}
+
+.hero {
+    max-width: 1024px;
+    width: 100%;
 }
 
 .panel,

@@ -69,3 +69,9 @@
 .margin-right {
     margin-right: 16px;
 }
+
+.text-center tr th,
+.text-center tr td,
+.text-center li {
+    text-align: center;
+}
