@@ -52,13 +52,31 @@
     display: -moz-box;
     display: flex;
     -webkit-box-flex: 1;
-    -webkit-flex: 1 0 0;
+    -webkit-flex: 1 0 auto;
        -moz-box-flex: 1;
-        -ms-flex: 1 0 0;
-            flex: 1 0 0;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     max-width: 100%;
 }
 
+.nav-brand {
+    margin-left: 16px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 64em) {
+    .nav-left,
+    .nav-right {
+        -ms-flex-preferred-size: 0;
+             -webkit-flex-basis: 0;
+                     flex-basis: 0;
+    }
+                    
+    .nav-brand {
+        margin-left: 32px;
+    }
+}
 
 .nav-left {
     -webkit-box-pack: start;
@@ -96,8 +114,7 @@
     margin-right: auto;
 }
 
-.nav,
-.nav-hero {
+.nav {
     background-color: white;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -109,18 +126,6 @@
     text-align: center;
     z-index: 10;
     width: 100%;
-}
-
-.nav-hero {
-    max-width: 1024px;
-    background-color: transparent;
-    margin: auto;
-}
-
-.nav-brand {
-    font-size: 24px!important;
-    font-weight: 400;
-    margin-left: 32px;
 }
 
 .nav-offset {
