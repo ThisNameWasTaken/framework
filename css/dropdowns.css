@@ -2,13 +2,10 @@
 .dropdown-hover {
     position: relative;
     display: inline-block!important;
-    -webkit-touch-callout: none;
-      -webkit-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
 }
 
+.dropdown,
+.dropdown-hover,
 .dropdown-item {
     -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -26,9 +23,9 @@
     border: none;
     border-radius: 2px;
     overflow: hidden;
-    -webkit-transition: all .3s ease, width .17s ease-out, height .21s ease-out;
-         -o-transition: all .3s ease, width .17s ease-out, height .21s ease-out;
-            transition: all .3s ease, width .17s ease-out, height .21s ease-out;
+    -webkit-transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1);
+         -o-transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1);
+            transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 .dropdown.is-upgraded .dropdown-content * {
@@ -75,6 +72,9 @@
     -webkit-transition: all 0s .18s, opacity .18s ease;
          -o-transition: all 0s .18s, opacity .18s ease;
             transition: all 0s .18s, opacity .18s ease;
+    -webkit-transition: all 0s .18s, opacity .18s cubic-bezier(0.4, 0.0, 0.2, 1);
+         -o-transition: all 0s .18s, opacity .18s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transition: all 0s .18s, opacity .18s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .dropdown-content * {

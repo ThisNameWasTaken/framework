@@ -53,11 +53,11 @@
     -webkit-transform: translate(-50%, -50%) scale(0);
         -ms-transform: translate(-50%, -50%) scale(0);
             transform: translate(-50%, -50%) scale(0);
-    -webkit-transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
-            transition: opacity .3s ease-in, -webkit-transform .27s ease-in;
-         -o-transition: transform .27s ease-in, opacity .3s ease-in;
-            transition: transform .27s ease-in, opacity .3s ease-in;
-            transition: transform .27s ease-in, opacity .3s ease-in, -webkit-transform .27s ease-in;
+    -webkit-transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
+            transition: opacity .3s ease-out, -webkit-transform .3s ease-out;
+         -o-transition: transform .3s ease-out, opacity .3s ease-out;
+            transition: transform .3s ease-out, opacity .3s ease-out;
+            transition: transform .3s ease-out, opacity .3s ease-out, -webkit-transform .3s ease-out;
     opacity: .3;
     background-color: #000;
     border-radius: 50%;
