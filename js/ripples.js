@@ -57,6 +57,11 @@
 
         // Create a new ripple
         AddRippleToElement(this);
+        console.log('mouse up');
+
+        // blur the button so that the bigger shadow only shows on keyboard input
+        let self = this;
+        setTimeout(function () { self.blur(); }, 0);
     }
 
     function SetupRippleEffect(element) {
