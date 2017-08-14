@@ -1,16 +1,46 @@
-.badge,
 .tag {
     background-color: #000;
     color: #fff;
     display: inline-block;
     text-align: center;
-    padding: 0px 6px;
-}
-
-.tag {
+    padding: 4px 8px;
     border-radius: 2px;
 }
 
 .badge {
-    border-radius: 32px;
+  position: relative;
+  white-space: nowrap;
+  display: inline-block
+}
+
+.badge[badge]::after {
+  content: attr(badge);
+  display: inline-block;
+  text-align: center;
+  line-height: 22px;
+  position: absolute;
+  top: -11px;
+  right: -24px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #ff5722;
+  color: rgb(255, 255, 255);
+}
+
+.badge.badge--no-background[badge]::after {
+  color: #ff5722;
+  background-color: transparent;
+}
+
+.badge.badge--overlap::after {
+  right: -10px;
+}
+
+.badge.badge--button::after {
+    right: -5px;
+    top: -10px;
 }
