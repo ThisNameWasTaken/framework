@@ -31,16 +31,16 @@
   color: rgb(255, 255, 255);
 }
 
-.badge.badge--no-background[badge]::after {
+.badge.no-background[badge]::after {
   color: #ff5722;
   background-color: transparent;
 }
 
-.badge.badge--overlap::after {
+.badge.overlap::after {
   right: -10px;
 }
 
-.badge.badge--button::after {
+.badge.badge-button::after {
     right: -5px;
     top: -10px;
 }

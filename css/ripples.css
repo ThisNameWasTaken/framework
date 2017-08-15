@@ -17,26 +17,37 @@
     pointer-events: none;
 }
 
-.check .ripple-container {
-    width: 175%;
-    height: 175%;
+/* ripples for inputs */
+.checkbox__check .ripple-container,
+.radio__check .ripple-container,
+.switch__check .ripple-container {
+    width: 185%;
+    height: 185%;
     border-radius: 50%;
+    top: 50%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
 }
 
-.check .ripple-container,
-.check .ripple-container .ripple {
+.checkbox__check .ripple-container .ripple,
+.radio__check .ripple-container .ripple,
+.switch__check .ripple-container .ripple,
+.checkbox__check .ripple-container .ripple,
+.radio__check .ripple-container .ripple,
+.switch__check .ripple-container .ripple {
     left: 50%;
     top: 50%;
 }
 
-.check .ripple-container .ripple {
+.checkbox__check .ripple-container .ripple,
+.radio__check .ripple-container .ripple,
+.switch__check .ripple-container .ripple {
     background-color: #2196F3;
 }
 
-.material-switch .check .ripple-container {
+.switch .switch__check .ripple-container {
     left: 10px;
     width: 35px;
     height: 35px;
@@ -45,9 +56,10 @@
             transition: left 0s linear .3s;
 }
 
-.material-switch input:checked~.check .ripple-container {
+.switch input:checked~.switch__check .ripple-container {
     left: 26px;
 }
+/* END ripples for inputs */
 
 .ripple {
     -webkit-transform: translate(-50%, -50%) scale(0);

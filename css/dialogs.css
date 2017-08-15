@@ -1,12 +1,11 @@
 .dialog,
-.dialog .title,
-.dialog .actions {
+.dialog__title,
+.dialog__actions {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
 }
 
 .dialog {
@@ -29,12 +28,19 @@
     overflow: hidden;
 }
 
-.dialog .title {
-     text-align: center;
-     font-weight: 500;
+.dialog__title {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 16px;
 }
 
-.dialog .actions {
+.dialog__actions {
      -webkit-box-pack: justify;
         -moz-box-pack: justify;
          -ms-flex-pack: justify;

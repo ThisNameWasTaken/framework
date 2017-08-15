@@ -1,9 +1,9 @@
-.accordion {
+.collapsible {
     width: 100%;
     display: block;
 }
 
-.tab-group {
+.tab__group {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -17,7 +17,7 @@
     border-radius: 0px;
 }
 
-.tab .tab-bar {
+.tab .tab__bar {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -29,7 +29,7 @@
             transition: 0s;
 }
 
-.tab.is-active .tab-bar {
+.tab.is-active .tab__bar {
     width: 100%;
     -webkit-transition:all .18s cubic-bezier(0.0, 0.0, 0.2, 1);
          -o-transition:all .18s cubic-bezier(0.0, 0.0, 0.2, 1);
@@ -37,12 +37,12 @@
 }
 
 .tab-toggle,
-.accordion-toggle {
+.collapsible-toggle {
     display: none!important;
 }
 
-.tab-content,
-.accordion-content {
+.tab__content,
+.collapsible__content {
     position: relative;
     display: block;
     width: 100%;
@@ -54,8 +54,8 @@
     border-bottom-right-radius: 2px;
 }
 
-.tab-toggle:checked+.tab-content,
-.accordion-toggle:checked+.accordion-content {
+.tab-toggle:checked+.tab__content,
+.collapsible-toggle:checked+.collapsible__content {
     padding: 16px;
     opacity: 1;
     height: auto;

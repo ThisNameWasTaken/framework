@@ -57,11 +57,6 @@
 
         // Create a new ripple
         AddRippleToElement(this);
-        console.log('mouse up');
-
-        // blur the button so that the bigger shadow only shows on keyboard input
-        let self = this;
-        setTimeout(function () { self.blur(); }, 0);
     }
 
     function SetupRippleEffect(element) {
@@ -84,7 +79,7 @@
     }
 
     function SetRipplePos(event, element) {
-        if (element.classList.contains('check'))
+        if (element.classList.contains('checkbox__check') || element.classList.contains('radio__check') || element.classList.contains('switch__check'))
             return;
 
         // get element offset

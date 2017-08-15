@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    let tabGroups = document.getElementsByClassName('tab-group');
+    let tabGroups = document.getElementsByClassName('tab__group');
 
     for (let i = 0; i < tabGroups.length; i++) {
         let tabItems = tabGroups[i].getElementsByClassName('tab');
@@ -13,7 +13,7 @@
             // add the bottom bar
             if (tabContent) {
                 let tabBar = document.createElement('span');
-                tabBar.classList.add('tab-bar');
+                tabBar.classList.add('tab__bar');
                 tabBar.classList.add('primary');
                 tabItems[i].appendChild(tabBar);
             }

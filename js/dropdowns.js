@@ -18,7 +18,7 @@
         window.addEventListener('click', function () {
             if (!isDropdownActive)
                 return;
-            if (event.target.classList.contains('dropdown-element'))
+            if (event.target.classList.contains('dropdown__element'))
                 return;
 
             lastActiveDropdownContent.classList.add('inactive');
@@ -26,7 +26,7 @@
         });
 
     function UpgradeDropdown(dropdown) {
-        let dropdownContent = dropdown.getElementsByClassName('dropdown-content')[0];
+        let dropdownContent = dropdown.getElementsByClassName('dropdown__content')[0];
         // make sure the position of the dropdown is set to static so that we can get the correct width and height
         dropdown.classList.add('js-pos-static');
         // set the width and height
@@ -41,7 +41,8 @@
         if (dropdown.classList.contains('dropdown')) {
             dropdownContent.classList.add('inactive');
 
-            let button = dropdown.getElementsByClassName('dropdown-button')[0];
+            let button = dropdown.getElementsByClassName('dropdown__button')[0];
+            console.log(dropdown);
             button.addEventListener('click', function () {
                 if (lastActiveDropdownContent === dropdownContent && !dropdownContent.classList.contains('inactive'))
                     return;
@@ -50,13 +51,12 @@
                     dropdownContent.classList.remove('inactive');
                     isDropdownActive = true;
                     lastActiveDropdownContent = dropdownContent;
-                    console.log('click on btn');
                 }, 0);
             });
         }
 
         // add the ripple effect to each dropdownitem
-        let dropdownItems = dropdown.getElementsByClassName('dropdown-item');
+        let dropdownItems = dropdown.getElementsByClassName('dropdown__item');
         for (let i = 0; i < dropdownItems.length; i++) {
             dropdownItems[i].classList.add('ripple-effect');
         }

@@ -2,28 +2,29 @@
 (function () {
     'use strict';
 
-    let inputs = document.getElementsByClassName('material-input');
+    let textfieldInputs = document.getElementsByClassName('textfield__input');
 
     // each time the user clicks outside the form
-    for (let i = 0; i < inputs.length; i++) {
+    for (let i = 0; i < textfieldInputs.length; i++) {
         // toggle the active state of the input
-        inputs[i].addEventListener('blur', ToggleActive);
+        textfieldInputs[i].addEventListener('blur', ToggleActive);
 
-        AddLabel(inputs[i]);
-
+        AddLabel(textfieldInputs[i]);
         // check if it should resize automatically
-        if (inputs[i].classList.contains('auto-resize')) {
+        if (textfieldInputs[i].classList.contains('auto-resize')) {
+            console.log(textfieldInputs[i]);
+            console.log('autoresizes');
             // remove user's ability to manually rise it
-            inputs[i].classList.add('is-upgraded');
+            textfieldInputs[i].classList.add('is-upgraded');
 
             // attach the mirrored text area
             let mirroredTextarea = document.createElement('div');
-            mirroredTextarea.classList.add('mirrored-textarea');
-            inputs[i].parentElement.appendChild(mirroredTextarea);
+            mirroredTextarea.classList.add('textfield__mirrored-textarea');
+            textfieldInputs[i].parentElement.appendChild(mirroredTextarea);
 
             // resize on input or window resize
-            inputs[i].addEventListener('input', function () { Resize(this, mirroredTextarea); });
-            window.addEventListener('resize', function () { Resize(inputs[i], mirroredTextarea); });
+            textfieldInputs[i].addEventListener('input', function () { Resize(this, mirroredTextarea); });
+            window.addEventListener('resize', function () { Resize(textfieldInputs[i], mirroredTextarea); });
         }
     }
 
@@ -49,21 +50,21 @@
     }
 
     /**
-     * Adds a material label to the input element
-     * @param {HTMLInputElement} input - the input which needs the label
+     * Adds a material label to the textfield input element
+     * @param {HTMLInputElement} textfieldInput - the textfield input which needs the label
      */
-    function AddLabel(input) {
-        if (!input.placeholder)
+    function AddLabel(textfieldInput) {
+        if (!textfieldInput.placeholder)
             return;
 
         // create the label
         let label = document.createElement('label');
-        label.classList.add('material-label');
-        label.innerHTML = input.placeholder;
+        label.classList.add('textfield__label');
+        label.innerHTML = textfieldInput.placeholder;
         // clear the placeholder
-        input.placeholder = '';
+        textfieldInput.placeholder = '';
         // attach the label to the input group
-        input.parentElement.appendChild(label);
+        textfieldInput.parentElement.appendChild(label);
     }
 })();
 
@@ -71,36 +72,36 @@
 (function () {
     'use strict';
 
-    let sliders = document.getElementsByClassName('material-range');
+    let sliderInputs = document.getElementsByClassName('slider__input');
     let isIE = navigator.userAgent.match(/Trident/g) || navigator.userAgent.match(/MSIE/g);
 
     // for IE 
     if (isIE) {
         let isActive = false;
 
-        for (let i = 0; i < sliders.length; i++) {
-            HandleSliderProgress(sliders[i]);
+        for (let i = 0; i < sliderInputs.length; i++) {
+            HandleSliderProgress(sliderInputs[i]);
             // IE 'input' alternative for range input elements
-            sliders[i].addEventListener('mousedown', function () { isActive = true; let self = this; setTimeout(function () { HandleSliderProgress(self); }, 0); });
-            sliders[i].addEventListener('mouseup', function () { isActive = false; HandleSliderProgress(this); });
-            sliders[i].addEventListener('mousemove', function () { if (!isActive) return; HandleSliderProgress(this); });
+            sliderInputs[i].addEventListener('mousedown', function () { isActive = true; let self = this; setTimeout(function () { HandleSliderProgress(self); }, 0); });
+            sliderInputs[i].addEventListener('mouseup', function () { isActive = false; HandleSliderProgress(this); });
+            sliderInputs[i].addEventListener('mousemove', function () { if (!isActive) return; HandleSliderProgress(this); });
         }
     } else {
         // for every other browser
-        for (let i = 0; i < sliders.length; i++) {
-            HandleSliderProgress(sliders[i]);
+        for (let i = 0; i < sliderInputs.length; i++) {
+            HandleSliderProgress(sliderInputs[i]);
 
-            sliders[i].addEventListener('input', function () { HandleSliderProgress(this); });
+            sliderInputs[i].addEventListener('input', function () { HandleSliderProgress(this); });
         }
     }
 
     /**
      * Moves the progress bar for the slider element so that it matches the slider-thumb position
-     * @param {HTMLInputElement} slider - range input
+     * @param {HTMLInputElement} sliderInput - range input
      */
-    function HandleSliderProgress(slider) {
-        let progressBar = slider.parentElement.getElementsByClassName('material-range-progressbar')[0];
-        let percentage = (slider.value - slider.min) / (slider.max - slider.min);
+    function HandleSliderProgress(sliderInput) {
+        let progressBar = sliderInput.parentElement.getElementsByClassName('slider__progressbar')[0];
+        let percentage = (sliderInput.value - sliderInput.min) / (sliderInput.max - sliderInput.min);
 
         progressBar.style.width = (percentage * 100 + '%');
     }

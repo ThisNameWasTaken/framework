@@ -181,11 +181,11 @@ input.button[type="submit"] {
     background-color: rgba(0, 0, 0, 0.12)!important;
 }
 
-.button.round {
+.button.rounded {
     border-radius: 32px;
 }
 
 .button .material-icons,
-.nav-item .material-icons {
+.nav__item .material-icons {
     vertical-align: middle;
 }

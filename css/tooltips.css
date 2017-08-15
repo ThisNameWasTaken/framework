@@ -1,68 +1,82 @@
-.tooltip {
-    -webkit-transform: scale(0) translate(-50%, 1.5em);
-        -ms-transform: scale(0) translate(-50%, 1.5em);
-            transform: scale(0) translate(-50%, 1.5em);
-    -webkit-transform-origin: top left;
-        -ms-transform-origin: top left;
-            transform-origin: top left;
-    left: 50%;
-    top: 50%;
+.tooltip__info {
+    -webkit-transition: all 0s;
+         -o-transition: all 0s;
+            transition: all 0s;
     z-index: 999;
     background: rgba(97, 97, 97, 0.9);
     border-radius: 2px;
     color: rgb(255, 255, 255);
-    display: inline-block;
     font-size: .7em;
     font-weight: 500;
     line-height: 1em;
-    max-width: 20em;
+    max-width: 100%;
+    display: inline-block;
     position: absolute;
     padding: 8px;
     text-align: center;
 }
 
-.tooltip-container {
+.tooltip__info,
+.tooltip__info.top {
+    -webkit-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+    bottom: 110%;
+}
+
+.tooltip__info.bottom {
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+    top: 110%;
+}
+
+.tooltip__info,
+.tooltip__info.top,
+.tooltip__info.bottom {
+    -webkit-transform: scale(0) translate(-50%, 0%);
+        -ms-transform: scale(0) translate(-50%, 0%);
+            transform: scale(0) translate(-50%, 0%);
+    left: 50%;
+}
+
+.tooltip__info.left,
+.tooltip__info.right {
+    -webkit-transform: scale(0) translate(0%, -50%);
+        -ms-transform: scale(0) translate(0%, -50%);
+            transform: scale(0) translate(0%, -50%);
+    /* reset default values */
+    left: 0;
+    bottom: 0;
+}
+
+.tooltip__info.left {
+    -webkit-transform-origin: top right;
+        -ms-transform-origin: top right;
+            transform-origin: top right;
+    left: -75%;
+    bottom: -100%;
+}
+
+.tooltip__label,
+.tooltip {
     position: relative;
     cursor: pointer;
+    display: inline;
 }
 
-.tooltip-container:hover>.tooltip {
-    -webkit-animation: pulse .2s cubic-bezier(0, 0, 0.2, 1) forwards;
-            animation: pulse .2s cubic-bezier(0, 0, 0.2, 1) forwards;
+.tooltip__label:hover+.tooltip__info {
+    -webkit-transition: all .11s cubic-bezier(0, 0, 0.2, 1);
+         -o-transition: all .11s cubic-bezier(0, 0, 0.2, 1);
+            transition: all .11s cubic-bezier(0, 0, 0.2, 1);
+    -webkit-transform: scale(1) translate(-50%, 0%);
+        -ms-transform: scale(1) translate(-50%, 0%);
+            transform: scale(1) translate(-50%, 0%);
 }
 
-@-webkit-keyframes pulse {
-    0% {
-        -webkit-transform: scale(0) translate(-50%, 1.5em);
-                transform: scale(0) translate(-50%, 1.5em);
-        opacity: 0;
-    }
-    50% {
-        -webkit-transform: scale(0.99) translate(-50%, 1.5em);
-                transform: scale(0.99) translate(-50%, 1.5em);
-    }
-    100% {
-        -webkit-transform: scale(1) translate(-50%, 1.5em);
-                transform: scale(1) translate(-50%, 1.5em);
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes pulse {
-    0% {
-        -webkit-transform: scale(0) translate(-50%, 1.5em);
-                transform: scale(0) translate(-50%, 1.5em);
-        opacity: 0;
-    }
-    50% {
-        -webkit-transform: scale(0.99) translate(-50%, 1.5em);
-                transform: scale(0.99) translate(-50%, 1.5em);
-    }
-    100% {
-        -webkit-transform: scale(1) translate(-50%, 1.5em);
-                transform: scale(1) translate(-50%, 1.5em);
-        opacity: 1;
-        visibility: visible;
-    }
+.tooltip__label:hover+.tooltip__info.left,
+.tooltip__label:hover+.tooltip__info.right {
+    -webkit-transform: scale(1) translate(0%, -50%);
+        -ms-transform: scale(1) translate(0%, -50%);
+            transform: scale(1) translate(0%, -50%);
 }

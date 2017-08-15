@@ -1,5 +1,5 @@
 /* flex: flex-grow | flex-shrink | flex-basis */
-.nav-item {
+.nav__item {
     -webkit-box-align: center;
        -moz-box-align: center;
        -ms-flex-align: center;
@@ -32,7 +32,7 @@
               user-select: none;
 }
 
-.nav-item a {
+.nav__item a {
    -webkit-box-flex: 1;
    -webkit-flex: 1 0 auto;
       -moz-box-flex: 1;
@@ -40,12 +40,12 @@
            flex: 1 0 auto;
 }
 
-.nav-item img {
+.nav__item img {
     max-height: 1.75rem;
 }
 
-.nav-left,
-.nav-right {
+.nav__left,
+.nav__right {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -59,26 +59,22 @@
     max-width: 100%;
 }
 
-.nav-brand {
+.nav__brand {
     margin-left: 16px;
     font-size: 24px;
     font-weight: 400;
 }
 
 @media screen and (min-width: 64em) {
-    .nav-left,
-    .nav-right {
+    .nav__left,
+    .nav__right {
         -ms-flex-preferred-size: 0;
              -webkit-flex-basis: 0;
                      flex-basis: 0;
     }
-                    
-    .nav-brand {
-        margin-left: 32px;
-    }
 }
 
-.nav-left {
+.nav__left {
     -webkit-box-pack: start;
        -moz-box-pack: start;
        -ms-flex-pack: start;
@@ -86,7 +82,7 @@
             justify-content: flex-start;
 }
 
-.nav-right {
+.nav__right {
     -webkit-box-pack: end;
        -moz-box-pack: end;
        -ms-flex-pack: end;
@@ -94,7 +90,7 @@
             justify-content: flex-end;
 }
 
-.nav-center {
+.nav__center {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -133,7 +129,7 @@
     display: block!important;
 }
 
-.nav.top {
+.nav.fixed-top {
     position: fixed;
     top: 0;
 }
@@ -161,7 +157,7 @@
     right: 0;
 }
 
-.sidenav .nav-item {
+.sidenav .nav__item {
     display: block;
     border: none;
     background-color: transparent;
@@ -189,18 +185,18 @@
     overflow: hidden;
 }
 
-.sidenav .nav-item::-moz-focus-inner {
+.sidenav .nav__item::-moz-focus-inner {
     border: 0;
 }
 
-.sidenav .nav-item:hover {
+.sidenav .nav__item:hover {
     background-color: rgba(158, 158, 158, 0.20);
 }
 
-.sidenav .nav-item:focus:not(:active) {
+.sidenav .nav__item:focus:not(:active) {
     background-color: rgba(0, 0, 0, 0.12);
 }
 
-.sidenav .nav-item:active {
+.sidenav .nav__item:active {
     background-color: rgba(158, 158, 158, 0.40);
 }

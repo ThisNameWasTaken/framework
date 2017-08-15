@@ -1,5 +1,5 @@
 .table,
-.table-all {
+.table--all {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -8,60 +8,60 @@
 }
 
 .table tr:first-child th:first-child,
-.table-all tr:first-child th:first-child{
+.table--all tr:first-child th:first-child{
     border-top-left-radius: 2px;
 }
 
 .table tr:first-child th:last-child,
-.table-all tr:first-child th:last-child{
+.table--all tr:first-child th:last-child{
     border-top-right-radius: 2px;
 }
 
-.table-all {
+.table--all {
     border: 1px solid #ccc;
 }
 
-.bordered tr,
-.table-all tr,
+.table.bordered tr,
+.table--all tr,
 .list.bordered li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.striped tbody tr:nth-child(even), 
+.table.striped tbody tr:nth-child(even), 
 .list.striped li:nth-child(even),
-.table-all tr:nth-child(even) {
-    background-color: #f1f1f1;
+.table--all tr:nth-child(even) {
+    background-color: #e8e8e8;
 }
 
-.table-all tr:nth-child(odd),
-.list.striped li:nth-child(even) {
+.table--all tr:nth-child(odd),
+.list.striped li:nth-child(odd) {
     background-color: #fff;
 }
 
-.hoverable tbody tr::-moz-focus-inner,
+.table.hoverable tbody tr::-moz-focus-inner,
 .list.hoverable li::-moz-focus-inner {
     border: 0;
 }
 
-.hoverable tbody tr:hover,
+.table.hoverable tbody tr:hover,
 .list.hoverable li:hover {
     background-color: rgba(158, 158, 158, 0.2);
 }
 
-.hoverable tbody tr:focus:not(:active),
+.table.hoverable tbody tr:focus:not(:active),
 .list.hoverable li:focus:not(:active) {
     background-color: rgba(0, 0, 0, 0.12);
 }
 
-.hoverable tbody tr:active,
+.table.hoverable tbody tr:active,
 .list.hoverable li:active {
     background-color: rgba(158, 158, 158, 0.4);
 }
 
 .table td,
 .table th,
-.table-all td,
-.table-all th {
+.table--all td,
+.table--all th {
     padding: 8px 8px;
     display: table-cell;
     text-align: left;
@@ -70,8 +70,8 @@
 
 .table th:first-child,
 .table td:first-child,
-.table-all th:first-child,
-.table-all td:first-child {
+.table--all th:first-child,
+.table--all td:first-child {
     padding-left: 16px;
 }
 
@@ -79,10 +79,6 @@
     display: inline-block;
     list-style-type: none;
     overflow-x: hidden;
-}
-
-.list.inline-block-items li {
-    display: inline-block;
 }
 
 .list li {

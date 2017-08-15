@@ -45,23 +45,23 @@
     overflow: hidden;
 }
 
-.card .text,
+.card__text,
 .panel {
     padding: 16px;
 }
 
-.card .text {
+.card__text {
     width: 100%;
     opacity: .6;
 }
 
-.card.same-height {
+.card.full-height {
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
 }
 
-.card.same-height .text {
+.card.full-height .card__text {
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
@@ -72,7 +72,7 @@
             flex: 1 1 auto;
 }
 
-.card .media {
+.card__media {
     width: 100%;
     height: auto;
     min-height: 100px;
@@ -80,14 +80,20 @@
     overflow: hidden;
 }
 
-.card .media.hoverable:hover img {
+.card__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card__media.hoverable:hover img {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
     opacity: .9;
 }
 
-.card .title {
+.card__title {
     color: #fff;
     font-size: 24px;
     font-weight: 300;
@@ -97,7 +103,7 @@
     left: 0;
 }
 
-.card .actions {
+.card__actions {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -117,7 +123,7 @@
     border-top: 1px solid rgba(0, 0, 0, .2);
 }
 
-.card .menu {
+.card__menu {
     position: absolute;
     top: 16px;
     right: 16px;
