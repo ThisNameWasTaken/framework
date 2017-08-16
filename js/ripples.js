@@ -3,22 +3,20 @@
 
     // get all the elements with a 'ripple-effect'
     let elements = document.getElementsByClassName('ripple-effect');
-
     let ignoreMouseDown = false, ignoreMouseUp = false;
 
     for (let i = 0; i < elements.length; i++) {
-        SetupRippleEffect(elements[i]);
+        let rippleContainer = SetupRippleEffect(elements[i]);
 
-        elements[i].addEventListener('mousedown', DisplayRipple);
-        elements[i].addEventListener('mouseup', FadeRipple);
-        elements[i].addEventListener('mouseleave', FadeRipple);
+        elements[i].addEventListener('mousedown', function () { DisplayRipple(event, this, rippleContainer); });
+        elements[i].addEventListener('mouseup', function () { FadeRipple(event, this, rippleContainer); });
+        elements[i].addEventListener('mouseleave', function () { FadeRipple(event, this, rippleContainer); });
 
-        elements[i].addEventListener('touchstart', DisplayRipple);
-        elements[i].addEventListener('touchend', FadeRipple);
+        elements[i].addEventListener('touchstart', function () { DisplayRipple(event, this, rippleContainer); });
+        elements[i].addEventListener('touchend', function () { FadeRipple(event, this, rippleContainer); });
     }
 
-    function DisplayRipple() {
-
+    function DisplayRipple(event, element, rippleContainer) {
         if (event.type === 'mousedown') {
             if (ignoreMouseDown) {
                 ignoreMouseDown = false;
@@ -28,22 +26,20 @@
             ignoreMouseDown = ignoreMouseUp = true;
         }
 
-        let rippleContainer = this.getElementsByClassName('ripple-container')[0];
         let ripple = rippleContainer.lastElementChild;
         ripple.classList.add('is-visible');
 
         // Display the ripple 
-        SetRipplePos(event, this);
+        SetRipplePos(event, element, rippleContainer);
     }
 
-    function FadeRipple() {
+    function FadeRipple(event, element, rippleContainer) {
         if (event.type === 'mouseup')
             if (ignoreMouseUp) {
                 ignoreMouseUp = false;
                 return;
             }
 
-        let rippleContainer = this.getElementsByClassName('ripple-container')[0];
         let ripple = rippleContainer.lastElementChild;
 
         if (!ripple.classList.contains('is-visible'))
@@ -56,29 +52,35 @@
         setTimeout(function () { rippleContainer.removeChild(ripple); }, 600);
 
         // Create a new ripple
-        AddRippleToElement(this);
+        AddRippleToElement(element, rippleContainer);
     }
 
+    /**
+     * Sets up the ripple effect and returns the ripple container
+     * @param {HTMLElement} element - the element which should have the ripple effect
+     * @return {HTMLElement} rippleContainer
+     */
     function SetupRippleEffect(element) {
         let rippleContainer = document.createElement('div');
         rippleContainer.classList.add('ripple-container');
 
         element.appendChild(rippleContainer);
 
-        AddRippleToElement(element);
+        AddRippleToElement(element, rippleContainer);
+
+        return rippleContainer;
     }
 
-    function AddRippleToElement(element) {
+    function AddRippleToElement(element, rippleContainer) {
         let ripple = document.createElement('span');
         ripple.classList.add('ripple');
 
         ripple.style.width = ripple.style.height = Math.max(element.clientHeight, element.clientWidth) + 'px';
 
-        let rippleContainer = element.getElementsByClassName('ripple-container')[0];
         rippleContainer.appendChild(ripple);
     }
 
-    function SetRipplePos(event, element) {
+    function SetRipplePos(event, element, rippleContainer) {
         // get element offset
         let offset = element.getBoundingClientRect();
         // get click coords
@@ -88,7 +90,6 @@
         x = (x - offset.left) + 'px';
         y = (y - offset.top) + 'px';
 
-        let rippleContainer = element.getElementsByClassName('ripple-container')[0];
         let ripple = rippleContainer.lastElementChild;
         ripple.style.top = y;
         ripple.style.left = x;
