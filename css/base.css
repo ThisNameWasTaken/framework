@@ -26,19 +26,6 @@
     -webkit-transition: all .27s cubic-bezier(0.4, 0.0, 0.2, 1), color 0s, visibility 0s;
          -o-transition: all .27s cubic-bezier(0.4, 0.0, 0.2, 1), color 0s, visibility 0s;
             transition: all .27s cubic-bezier(0.4, 0.0, 0.2, 1), color 0s, visibility 0s;
-             
-     /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-    
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    -webkit-font-feature-settings: 'liga';
-       -moz-font-feature-settings: 'liga';
-            font-feature-settings: 'liga';
  }
 
  *:not(.fa):not(.material-icons),
