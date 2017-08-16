@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/overlays.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/dropdowns.css">
+    <link rel="stylesheet" href="css/menus.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/shadows.css">
     <link rel="stylesheet" href="css/utilities.css">
@@ -44,7 +44,7 @@
         <div class="nav__center">
             <a href="" class="nav__item"><i class="fa fa-twitter"></i></a>
             <a href="" class="nav__item"><i class="fa fa-facebook"></i></a>
-            <label class="nav__item opens-overlay dark-gray hide-xl hide-lg hide-md" id="menu-btn" for="side-nav-toggle"><i class="material-icons">menu</i></label>
+            <label class="nav__item opens-overlay dark-gray hide-xl hide-lg hide-md" id="sidenav-btn" for="side-nav-toggle"><i class="material-icons">menu</i></label>
         </div>
 
         <div class="nav__right hide-sm">
@@ -57,7 +57,7 @@
     <input type="checkbox" class="overlay-toggle" id="side-nav-toggle">
     <div class="overlay">
         <label class="overlay__bg closes-overlay" id="sidenav-bg" for="side-nav-toggle"></label>
-        <div class="sidenav right transition slide-right" trigger="menu-btn" idle="sidenav-bg">
+        <div class="sidenav right transition slide-right" trigger="sidenav-btn" idle="sidenav-bg">
             <a href="#" class="nav__item ripple-effect">Home</a>
             <a href="#" class="nav__item ripple-effect">About Us</a>
             <a href="#" class="nav__item ripple-effect">Contact</a>
@@ -284,21 +284,21 @@
 
     <div class="row">
         <div class="container margin-bottom">
-            <div class="dropdown-hover">
+            <div class="menu-hover">
                 <button class="button">Lorem ipsum</button>
-                <ul class="dropdown__content shadow-3">
-                    <li class="dropdown__item">Lorem </li>
-                    <li class="dropdown__item border-bottom">Lorem </li>
-                    <li class="dropdown__item">Lorem </li>
+                <ul class="menu__content shadow-3">
+                    <li class="menu__item">Lorem </li>
+                    <li class="menu__item border-bottom">Lorem </li>
+                    <li class="menu__item">Lorem </li>
                 </ul>
             </div>
 
-            <div class="dropdown">
-                <button class="button dropdown__button">Lorem ipsum dolor sit amet</button>
-                <ul class="dropdown__content top-right shadow-3">
-                    <li class="dropdown__item">Lorem ipsum dolor sit amet</li>
-                    <li class="dropdown__item">Neque, illum</li>
-                    <li class="dropdown__item">Ipsam doloribus</li>
+            <div class="menu">
+                <button class="button menu__button">Lorem ipsum dolor sit amet</button>
+                <ul class="menu__content top-right shadow-3">
+                    <li class="menu__item">Lorem ipsum dolor sit amet</li>
+                    <li class="menu__item">Neque, illum</li>
+                    <li class="menu__item">Ipsam doloribus</li>
                 </ul>
             </div>
         </div>
@@ -612,12 +612,12 @@
 
     <div class="row" style="margin-bottom: 100px">
         <div class="container hero">
-            <div class="dropdown">
-                <button class="button dropdown__button">menu</button>
-                <ul class="dropdown__content shadow-3">
-                    <li class="dropdown__item">Lorem.</li>
-                    <li class="dropdown__item">Assumenda!</li>
-                    <li class="dropdown__item">Molestias!</li>
+            <div class="menu">
+                <button class="button menu__button">menu</button>
+                <ul class="menu__content shadow-3">
+                    <li class="menu__item">Lorem.</li>
+                    <li class="menu__item">Assumenda!</li>
+                    <li class="menu__item">Molestias!</li>
                 </ul>
             </div>
         </div>
@@ -672,7 +672,7 @@
     <script src="js/overlays.js"></script>
     <script src="js/tabs.js"></script>
     <script src="js/transitions.js"></script>
-    <script src="js/dropdowns.js"></script>
+    <script src="js/menus.js"></script>
     <script src="js/buttons.js"></script>
     <script src="js/ripples.js"></script>
     <!-- <script src="js/check-in-view.js"></script> -->

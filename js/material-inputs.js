@@ -12,8 +12,6 @@
         AddLabel(textfieldInputs[i]);
         // check if it should resize automatically
         if (textfieldInputs[i].classList.contains('auto-resize')) {
-            console.log(textfieldInputs[i]);
-            console.log('autoresizes');
             // remove user's ability to manually rise it
             textfieldInputs[i].classList.add('is-upgraded');
 
