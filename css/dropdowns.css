@@ -23,9 +23,9 @@
     border: none;
     border-radius: 2px;
     overflow: hidden;
-    -webkit-transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1);
-         -o-transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1);
-            transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1);
+    -webkit-transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1), color .12s cubic-bezier(0.0, 0.0, 0.2, 1) .18s;
+         -o-transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1), color .12s cubic-bezier(0.0, 0.0, 0.2, 1) .18s;
+            transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1), width .17s cubic-bezier(0.0, 0.0, 0.2, 1), height .21s cubic-bezier(0.0, 0.0, 0.2, 1), color .12s cubic-bezier(0.0, 0.0, 0.2, 1) .18s;
 }
 
 .dropdown.is-upgraded .dropdown__content * {
@@ -75,6 +75,7 @@
     -webkit-transition: all 0s .18s;
          -o-transition: all 0s .18s;
             transition: all 0s .18s;
+    color: transparent!important;
 }
 
 .dropdown__content * {
