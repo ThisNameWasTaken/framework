@@ -79,9 +79,6 @@
     }
 
     function SetRipplePos(event, element) {
-        if (element.classList.contains('checkbox__check') || element.classList.contains('radio__check') || element.classList.contains('switch__check'))
-            return;
-
         // get element offset
         let offset = element.getBoundingClientRect();
         // get click coords

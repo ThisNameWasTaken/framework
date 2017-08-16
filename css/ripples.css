@@ -37,8 +37,8 @@
 .checkbox__check .ripple-container .ripple,
 .radio__check .ripple-container .ripple,
 .switch__check .ripple-container .ripple {
-    left: 50%;
-    top: 50%;
+    left: 50%!important;
+    top: 50%!important;
 }
 
 .checkbox__check .ripple-container .ripple,
