@@ -43,7 +43,6 @@ textarea.textfield__input,
 }
 
 .textfield__mirrored-textarea {
-    padding: 16px 0px;
     position: absolute;
     top: 0;
     pointer-events: none!important;
