@@ -1,5 +1,5 @@
 .button,
-.tab {
+.tab__item {
     background: transparent;
     border: none;
     border-radius: 2px;
@@ -37,22 +37,22 @@
 }
 
 .button::-moz-focus-inner,
-.tab::-moz-focus-inner {
+.tab__item::-moz-focus-inner {
     border: 0;
 }
 
 .button:hover,
-.tab:hover {
+.tab__item:hover {
     background-color: rgba(158, 158, 158, 0.20);
 }
 
 .button:focus:not(:active),
-.tab:focus:not(:active) {
+.tab__item:focus:not(:active) {
     background-color: rgba(0, 0, 0, 0.12);
 }
 
 .button:active,
-.tab:active {
+.tab__item:active {
     background-color: rgba(158, 158, 158, 0.40);
 }
 

@@ -4,7 +4,7 @@
     let tabGroups = document.getElementsByClassName('tab__group');
 
     for (let i = 0; i < tabGroups.length; i++) {
-        let tabItems = tabGroups[i].getElementsByClassName('tab');
+        let tabItems = tabGroups[i].getElementsByClassName('tab__item');
         let lastActiveTab = undefined;
 
         for (let i = 0; i < tabItems.length; i++) {

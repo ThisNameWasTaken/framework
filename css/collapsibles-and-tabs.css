@@ -1,4 +1,5 @@
-.collapsible {
+.collapsible,
+.collapsible__label {
     width: 100%;
     display: block;
 }
@@ -13,11 +14,11 @@
     width: 100%;
 }
 
-.tab {
+.tab__item {
     border-radius: 0px;
 }
 
-.tab .tab__bar {
+.tab__item .tab__bar {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -29,15 +30,15 @@
             transition: 0s;
 }
 
-.tab.is-active .tab__bar {
+.tab__item.is-active .tab__bar {
     width: 100%;
     -webkit-transition:all .18s cubic-bezier(0.0, 0.0, 0.2, 1);
          -o-transition:all .18s cubic-bezier(0.0, 0.0, 0.2, 1);
             transition:all .18s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
-.tab-toggle,
-.collapsible-toggle {
+.tab__toggle,
+.collapsible__toggle {
     display: none!important;
 }
 
@@ -54,8 +55,8 @@
     border-bottom-right-radius: 2px;
 }
 
-.tab-toggle:checked+.tab__content,
-.collapsible-toggle:checked+.collapsible__content {
+.tab__toggle:checked+.tab__content,
+.collapsible__toggle:checked+.collapsible__content {
     padding: 16px;
     opacity: 1;
     height: auto;

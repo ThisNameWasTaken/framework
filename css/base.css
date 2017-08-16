@@ -68,11 +68,11 @@
 .nav__item,
 .footer__item,
 .dropdown__item,
+.tab__item,
 .checkbox,
 .radio,
 .switch,
-.slider,
-.tab {
+.slider {
      -webkit-tap-highlight-color: transparent;
      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
  }
