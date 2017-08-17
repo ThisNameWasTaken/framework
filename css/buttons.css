@@ -184,7 +184,6 @@ input.button[type="submit"] {
     border-radius: 32px;
 }
 
-.button .material-icons,
-.nav__item .material-icons {
+.button .material-icons {
     vertical-align: middle;
 }

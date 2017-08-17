@@ -31,23 +31,23 @@
             transform: translate(-50%, -50%);
 }
 
-.checkbox__check .ripple-container .ripple,
-.radio__check .ripple-container .ripple,
-.switch__check .ripple-container .ripple,
-.checkbox__check .ripple-container .ripple,
-.radio__check .ripple-container .ripple,
-.switch__check .ripple-container .ripple {
+.checkbox__check .ripple,
+.radio__check .ripple,
+.switch__check .ripple,
+.checkbox__check .ripple,
+.radio__check .ripple,
+.switch__check .ripple {
     left: 50%!important;
     top: 50%!important;
 }
 
-.checkbox__check .ripple-container .ripple,
-.radio__check .ripple-container .ripple,
-.switch__check .ripple-container .ripple {
+.checkbox__check .ripple,
+.radio__check .ripple,
+.switch__check .ripple {
     background-color: #2196F3;
 }
 
-.switch .switch__check .ripple-container {
+.switch__check .ripple-container {
     left: 10px;
     width: 35px;
     height: 35px;
@@ -56,7 +56,7 @@
             transition: left 0s linear .3s;
 }
 
-.switch input:checked~.switch__check .ripple-container {
+input:checked~.switch__check .ripple-container {
     left: 26px;
 }
 /* END ripples for inputs */

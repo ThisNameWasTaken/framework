@@ -1,0 +1,59 @@
+/* disabled state */
+.textfield input[disabled],
+.textfield input.disabled,
+.textfield textarea[disabled],
+.textfield textarea.disabled {
+    cursor: not-allowed!important;
+    color: rgba(0, 0, 0, 0.26)!important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.26)!important;
+}
+
+input.disabled~.checkbox__check::before,
+input[disabled]~.checkbox__check::before,
+input.disabled~.radio__check::before,
+input[disabled]~.radio__check::before{
+    cursor: not-allowed!important;
+    color: rgba(0, 0, 0, 0.26)!important;
+    border: 2px solid rgba(0, 0, 0, 0.26)!important;
+}
+
+input.disabled~.switch__check::after,
+input[disabled]~.switch__check::after { 
+    cursor: not-allowed!important;
+    color: rgba(0, 0, 0, 0.26)!important;
+    background-color: #ccc;
+}
+
+.slider__input[disabled]::-webkit-slider-thumb,
+.slider__input.disabled::-webkit-slider-thumb {
+    -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+    -webkit-transform: scale(1)!important; 
+            transform: scale(1)!important;
+    background-color: #ccc!important;
+}
+    
+.slider__input[disabled]::-moz-range-thumb,
+.slider__input.disabled::-moz-range-thumb {
+    box-shadow: none!important;
+    transform: scale(1)!important;
+    background-color: #ccc!important;
+}
+
+.slider__input[disabled]::-ms-thumb,
+.slider__input.disabled::-ms-thumb {
+    box-shadow: none!important;
+    -ms-transform: scale(1)!important; 
+        transform: scale(1)!important;
+    background-color: #ccc!important;
+}
+
+.slider__input[disabled]~.slider__background,
+.slider__input.disabled~.slider__background {
+    background-color: rgba(102, 102, 102, .26)!important;
+}
+
+.slider__input[disabled]~.slider__background .slider__progressbar,
+.slider__input[disabled]~.slider__background .slider__progressbar {
+    background-color: #ccc!important;
+}
