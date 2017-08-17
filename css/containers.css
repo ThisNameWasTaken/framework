@@ -38,11 +38,15 @@
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    z-index: 1;
+    z-index: 2;
     background: #fff;
     font-weight: 400;
     border-radius: 2px;
     overflow: hidden;
+}
+
+.card:active {
+    z-index: 8;
 }
 
 .card__text,

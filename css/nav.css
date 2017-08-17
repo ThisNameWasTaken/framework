@@ -120,7 +120,7 @@
     height: 3.25rem;
     position: relative;
     text-align: center;
-    z-index: 10;
+    z-index: 16;
     width: 100%;
 }
 
@@ -145,7 +145,7 @@
     height: 100%;
     width: 200px;
     background-color: #fff;
-    z-index: 1001;
+    z-index: 16;
     overflow: auto;
 }
 

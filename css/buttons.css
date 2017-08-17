@@ -1,5 +1,4 @@
-.button,
-.tab__item {
+.button {
     background: transparent;
     border: none;
     border-radius: 2px;
@@ -36,23 +35,19 @@
               user-select: none;
 }
 
-.button::-moz-focus-inner,
-.tab__item::-moz-focus-inner {
+.button::-moz-focus-inner {
     border: 0;
 }
 
-.button:hover,
-.tab__item:hover {
+.button:hover {
     background-color: rgba(158, 158, 158, 0.20);
 }
 
-.button:focus:not(:active),
-.tab__item:focus:not(:active) {
+.button:focus:not(:active) {
     background-color: rgba(0, 0, 0, 0.12);
 }
 
-.button:active,
-.tab__item:active {
+.button:active {
     background-color: rgba(158, 158, 158, 0.40);
 }
 
@@ -64,12 +59,14 @@ input.button[type="submit"] {
     background: rgba(158, 158, 158, 0.20);
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    z-index: 2;
 }
 
 .button.raised:active {
     -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
             box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     background-color: rgba(158, 158, 158, 0.40);
+    z-index: 8;
 }   
 
 .button.raised:focus:not(:active) {
@@ -93,6 +90,7 @@ input.button[type="submit"] {
             box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
     position: relative;
     line-height: normal;
+    z-index: 6;
 }
 
 .button.fab .material-icons,
@@ -124,6 +122,7 @@ input.button[type="submit"] {
     -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
             box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     background-color: rgba(158, 158, 158, 0.40);
+    z-index: 12;
 }
 
 .button.fab:focus:not(:active),

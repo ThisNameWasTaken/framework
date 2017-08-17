@@ -22,13 +22,13 @@
 }
 
 .overlay {
-     z-index: 999;
+     z-index: 16;
      top: 0;
 }
 
 .overlay__bg {
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 16;
+    background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
 }
 

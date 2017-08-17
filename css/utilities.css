@@ -76,3 +76,9 @@
 .text-center {
     text-align: center;
 }
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-origin: center;
+}

@@ -18,7 +18,7 @@
     display: inline-block;
     height: 0;
     background: #f1f1f1;
-    z-index: 3;
+    z-index: 8;
     list-style-type: none;
     border: none;
     border-radius: 2px;
