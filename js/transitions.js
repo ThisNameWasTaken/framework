@@ -19,8 +19,9 @@
                 let trigger = document.getElementById(triggers[i]);
                 if (trigger)
                     trigger.addEventListener('click', function () { element.classList.remove('is-stopped'); });
-                else
-                    console.warn('wrong trigger id ' + trigger[i]);
+                // DEBUG ONLY
+                // else
+                //     console.warn('wrong trigger id ' + trigger[i]);
             }
         }
 
@@ -31,8 +32,9 @@
                 let stop = document.getElementById(stops[i]);
                 if (stop)
                     stop.addEventListener('click', function () { setTimeout(function () { element.classList.add('is-stopped'); }, 0); });
-                else
-                    console.warn('wrong stop id ' + stops[i]);
+                // DEBUG ONLY
+                // else
+                //     console.warn('wrong stop id ' + stops[i]);
             }
         }
 
@@ -43,8 +45,9 @@
                 let toggle = document.getElementById(toggles[i]);
                 if (toggle)
                     toggle.addEventListener('click', function () { element.classList.toggle('is-stopped'); });
-                else
-                    console.warn('wrong toggle id ' + toggle[i]);
+                // DEBUG ONLY
+                // else
+                //     console.warn('wrong toggle id ' + toggle[i]);
             }
         }
     }

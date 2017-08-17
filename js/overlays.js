@@ -22,6 +22,9 @@
         }
     }
 
+    /**
+     * Locks or unlocks user's ability to scroll through the webpage
+     */
     function ToggleViewportLock() {
         document.body.classList.toggle('no-scroll');
         html.classList.toggle('no-scroll');

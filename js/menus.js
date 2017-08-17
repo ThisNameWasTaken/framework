@@ -3,60 +3,64 @@
 
     let clickableMenus = document.getElementsByClassName('menu');
     for (let i = 0; i < clickableMenus.length; i++) {
-        UpgradeDropdown(clickableMenus[i]);
+        UpgradeMenu(clickableMenus[i]);
     }
 
     let hoverableMenu = document.getElementsByClassName('menu-hover');
     for (let i = 0; i < hoverableMenu.length; i++) {
-        UpgradeDropdown(hoverableMenu[i]);
+        UpgradeMenu(hoverableMenu[i]);
     }
 
-    let lastActiveDropdownContent;
-    let isDropdownActive = false;
+    let lastActiveMenuContent;
+    let isMenuActive = false;
 
     if (clickableMenus)
         window.addEventListener('click', function () {
-            if (!isDropdownActive)
+            if (!isMenuActive)
                 return;
 
-            lastActiveDropdownContent.classList.add('inactive');
-            isDropdownActive = false;
+            lastActiveMenuContent.classList.add('inactive');
+            isMenuActive = false;
         });
 
-    function UpgradeDropdown(dropdown) {
-        let dropdownContent = dropdown.getElementsByClassName('menu__content')[0];
+    /**
+     * Upgrades the specified menu
+     * @param {HTMLElement} menu 
+     */
+    function UpgradeMenu(menu) {
+        let menuContent = menu.getElementsByClassName('menu__content')[0];
         // make sure the position of the dropdown is set to static so that we can get the correct width and height
-        dropdown.classList.add('js-pos-static');
+        menu.classList.add('js-pos-static');
         // set the width and height
-        dropdownContent.style.width = ((dropdownContent.scrollWidth + 1) + 'px');
-        dropdownContent.style.height = (dropdownContent.scrollHeight + 'px');
+        menuContent.style.width = ((menuContent.scrollWidth + 1) + 'px');
+        menuContent.style.height = (menuContent.scrollHeight + 'px');
 
         // the dropdowns must be absolute so we remove the static class
-        dropdown.classList.remove('js-pos-static');
-        dropdown.classList.add('is-upgraded');
+        menu.classList.remove('js-pos-static');
+        menu.classList.add('is-upgraded');
 
         // handle clicks if the dropdown is clickable
-        if (dropdown.classList.contains('menu')) {
-            dropdownContent.classList.add('inactive');
+        if (menu.classList.contains('menu')) {
+            menuContent.classList.add('inactive');
 
-            let button = dropdown.getElementsByClassName('menu__button')[0];
+            let menuButton = menu.getElementsByClassName('menu__button')[0];
 
-            button.addEventListener('click', function () {
-                if (lastActiveDropdownContent === dropdownContent && !dropdownContent.classList.contains('inactive'))
+            menuButton.addEventListener('click', function () {
+                if (lastActiveMenuContent === menuContent && !menuContent.classList.contains('inactive'))
                     return;
 
                 setTimeout(function () {
-                    dropdownContent.classList.remove('inactive');
-                    isDropdownActive = true;
-                    lastActiveDropdownContent = dropdownContent;
+                    menuContent.classList.remove('inactive');
+                    isMenuActive = true;
+                    lastActiveMenuContent = menuContent;
                 }, 0);
             });
         }
 
         // add the ripple effect to each dropdownitem
-        let dropdownItems = dropdown.getElementsByClassName('menu__item');
-        for (let i = 0; i < dropdownItems.length; i++) {
-            dropdownItems[i].classList.add('ripple-effect');
+        let menuItems = menu.getElementsByClassName('menu__item');
+        for (let i = 0; i < menuItems.length; i++) {
+            menuItems[i].classList.add('ripple-effect');
         }
     }
 })();

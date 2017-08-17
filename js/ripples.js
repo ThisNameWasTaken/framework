@@ -16,6 +16,12 @@
         elements[i].addEventListener('touchend', function () { FadeRipple(event, this, rippleContainer); });
     }
 
+    /**
+     * Makes a ripple visible
+     * @param {Event} event 
+     * @param {HTMLElement} element 
+     * @param {HTMLElement} rippleContainer
+     */
     function DisplayRipple(event, element, rippleContainer) {
         if (event.type === 'mousedown') {
             if (ignoreMouseDown) {
@@ -33,6 +39,12 @@
         SetRipplePos(event, element, rippleContainer);
     }
 
+    /**
+     * Adds a fading transition to a ripple
+     * @param {Event} event 
+     * @param {HTMLElement} element 
+     * @param {HTMLElement} rippleContainer 
+     */
     function FadeRipple(event, element, rippleContainer) {
         if (event.type === 'mouseup')
             if (ignoreMouseUp) {
@@ -71,6 +83,11 @@
         return rippleContainer;
     }
 
+    /**
+     * Adds a new ripple to the given element
+     * @param {HTMLElement} element 
+     * @param {HTMLElement} rippleContainer
+     */
     function AddRippleToElement(element, rippleContainer) {
         let ripple = document.createElement('span');
         ripple.classList.add('ripple');
@@ -80,6 +97,12 @@
         rippleContainer.appendChild(ripple);
     }
 
+    /**
+     * Sets a ripple's position to the user click or touch position
+     * @param {Event} event 
+     * @param {HTMLElement} element 
+     * @param {HTMLElement} rippleContainer
+     */
     function SetRipplePos(event, element, rippleContainer) {
         // get element offset
         let offset = element.getBoundingClientRect();
