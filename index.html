@@ -35,6 +35,21 @@
     <!-- icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        #scroll-fab {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            transform: scale(0);
+            transition: .2s cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+
+        #scroll-fab.is-visible {
+            transform: scale(1);
+            transition: .2s cubic-bezier(0.4, 0.0, 1, 1);
+        }
+    </style>
 </head>
 
 <body class="light-gray">
@@ -67,6 +82,8 @@
     </div>
 
     <div class="nav-offset"></div>
+
+    <button class="button fab ripple-effect accent" id="scroll-fab"><i class="material-icons">keyboard_arrow_up</i></button>
 
     <div class="row no-space">
         <div class="col md-6 lg-3 red">
@@ -210,13 +227,13 @@
     </div>
 
     <div class="row">
-        <div class="container">
+        <div class="container hero">
             <div class="button primary raised ripple-effect" style="overflow: hidden; position: relative;">ripples</div>
         </div>
     </div>
 
     <div class="row">
-        <div class="container">
+        <div class="container hero">
             <div class="button raised ripple-effect">test btn</div>
         </div>
     </div>
@@ -276,7 +293,7 @@
     </div>
 
     <div class="row">
-        <div class="container margin-bottom">
+        <div class="container hero margin-bottom">
             <span class="tag blue">Lorem</span>
             <span class="badge overlap material-icons" badge="99+">message</span>
             <span class="badge overlap badge--no-background material-icons" badge="19">landscape</span>
@@ -285,7 +302,7 @@
     </div>
 
     <div class="row">
-        <div class="container margin-bottom">
+        <div class="container hero margin-bottom">
             <div class="menu-hover">
                 <button class="button">Lorem ipsum</button>
                 <ul class="menu__content shadow-8">
@@ -307,7 +324,7 @@
     </div>
 
     <div class="row">
-        <div class="container">
+        <div class="container hero">
             <label class="button ripple-effect raised opens-overlay" for="dialog-overlay-toggle">open scirptless dialog</label>
         </div>
     </div>
@@ -326,7 +343,7 @@
     </div>
 
     <div class="row margin-bottom">
-        <div class="container">
+        <div class="container hero">
             <label class="button ripple-effect raised opens-overlay check-in-view" for="no-script-dialog-check">open dialog</label>
         </div>
     </div>
@@ -687,6 +704,36 @@
     <script src="js/menus.js"></script>
     <script src="js/buttons.js"></script>
     <script src="js/ripples.js"></script>
+    <script src="js/scroll-to.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            let scrollFab = document.getElementById('scroll-fab');
+
+            window.addEventListener('scroll', function () {
+                if (GetScrollPos() > 0) {
+                    scrollFab.classList.add('is-visible');
+                } else {
+                    scrollFab.classList.remove('is-visible');
+                }
+            });
+            scrollFab.addEventListener('click', function () {
+                scrollTo(0, 400);
+                setTimeout(function () {
+                    scrollFab.classList.remove('is-visible');
+                }, 400);
+            });
+
+            /**
+             * @returns {Number} scroll position
+             */
+            function GetScrollPos() {
+                return document.documentElement.scrollTop ||
+                    document.body.parentNode.scrollTop || document.body.scrollTop;
+            }
+        })();
+    </script>
     <!-- <script src="js/check-in-view.js"></script> -->
     <!-- <script src="js/benchmark.js"></script> -->
 </body>
