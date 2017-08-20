@@ -8,6 +8,9 @@
     for (let i = 0; i < textfieldInputs.length; i++) {
         // toggle the active state of the input
         textfieldInputs[i].addEventListener('blur', ToggleActive);
+        // if for some reason the textfield is already filled
+        if (textfieldInputs[i].value)
+            textfieldInputs[i].classList.add('is-active');
 
         AddLabel(textfieldInputs[i]);
         // check if it should resize automatically
@@ -34,7 +37,6 @@
      * Toggles the active state of material inputs
      */
     function ToggleActive() {
-        console.log(this.value);
         if (this.value) // if the form is not empty that means it's active
             this.classList.add('is-active');
         else
