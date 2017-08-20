@@ -21,8 +21,12 @@
             textfieldInputs[i].parentElement.appendChild(mirroredTextarea);
 
             // resize on input or window resize
-            textfieldInputs[i].addEventListener('input', function () { Resize(this, mirroredTextarea); });
-            window.addEventListener('resize', function () { Resize(textfieldInputs[i], mirroredTextarea); });
+            textfieldInputs[i].addEventListener('input', function () {
+                Resize(this, mirroredTextarea);
+            });
+            window.addEventListener('resize', function () {
+                Resize(textfieldInputs[i], mirroredTextarea);
+            });
         }
     }
 
@@ -30,10 +34,11 @@
      * Toggles the active state of material inputs
      */
     function ToggleActive() {
+        console.log(this.value);
         if (this.value) // if the form is not empty that means it's active
-            this.classList.add('active');
+            this.classList.add('is-active');
         else
-            this.classList.remove('active');
+            this.classList.remove('is-active');
     }
 
     /**
@@ -80,16 +85,30 @@
         for (let i = 0; i < sliderInputs.length; i++) {
             HandleSliderProgress(sliderInputs[i]);
             // IE 'input' alternative for range input elements
-            sliderInputs[i].addEventListener('mousedown', function () { isActive = true; let self = this; setTimeout(function () { HandleSliderProgress(self); }, 0); });
-            sliderInputs[i].addEventListener('mouseup', function () { isActive = false; HandleSliderProgress(this); });
-            sliderInputs[i].addEventListener('mousemove', function () { if (!isActive) return; HandleSliderProgress(this); });
+            sliderInputs[i].addEventListener('mousedown', function () {
+                isActive = true;
+                let self = this;
+                setTimeout(function () {
+                    HandleSliderProgress(self);
+                }, 0);
+            });
+            sliderInputs[i].addEventListener('mouseup', function () {
+                isActive = false;
+                HandleSliderProgress(this);
+            });
+            sliderInputs[i].addEventListener('mousemove', function () {
+                if (!isActive) return;
+                HandleSliderProgress(this);
+            });
         }
     } else {
         // for every other browser
         for (let i = 0; i < sliderInputs.length; i++) {
             HandleSliderProgress(sliderInputs[i]);
 
-            sliderInputs[i].addEventListener('input', function () { HandleSliderProgress(this); });
+            sliderInputs[i].addEventListener('input', function () {
+                HandleSliderProgress(this);
+            });
         }
     }
 
@@ -103,4 +122,4 @@
 
         progressBar.style.width = (percentage * 100 + '%');
     }
-})();   
+})();
