@@ -5,6 +5,7 @@
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('mouseup', BlurButton);
+        buttons[i].addEventListener('mouseout', BlurButton);
     }
 
     /**
@@ -12,6 +13,8 @@
      */
     function BlurButton() {
         let self = this;
-        setTimeout(function () { self.blur(); }, 0);
+        setTimeout(function () {
+            self.blur();
+        }, 0);
     }
 })();
